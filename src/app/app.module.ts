@@ -7,11 +7,13 @@ import { LoginComponent } from './user/login/login.component';
 import {FormsModule} from'@angular/forms';
 import {HttpClientModule} from'@angular/common/http';
 import { MainComponent } from './user/main/main.component';
+import { SlidersComponent } from './user/sliders/sliders.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MainComponent
+    MainComponent,
+    SlidersComponent
   ],
   imports: [
     BrowserModule,

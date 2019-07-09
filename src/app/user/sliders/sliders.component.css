@@ -11,13 +11,10 @@
 	font-size: 14px;
 	font-weight: bold;
 }
-.menubar ul::after {
-	display: block;
-	clear: both;
-	content: '';
-  }
+
 .menubar ul {
-	position: relative;
+	background: rgb(109, 109, 109);
+	height: 50px;
 	list-style: none;
 	display: table;
 	margin-left: auto;
@@ -90,7 +87,7 @@
 }
 
 .menubar li ul a:hover, .menubar li ul li:hover a {
-	background-color: rgba(255,255,255,.3);
+	background: rgb(71, 71, 71);
 	border: 0px;
 	color: #ffffff;
 	text-decoration: none;
@@ -99,4 +96,3 @@
 .menubar p {
 	clear: left;
 }
-
