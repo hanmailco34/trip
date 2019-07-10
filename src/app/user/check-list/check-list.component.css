@@ -1,0 +1,58 @@
+table.checkListTable {
+    border-collapse: collapse;
+    text-align: center;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: auto;
+}
+table.checkListTable thead th {
+    width: 150px;
+    padding: 10px;
+    vertical-align: top;
+    font-weight: bold;
+    font-size: 28px;
+    color: rgb(255, 57, 57);
+    background: #f1f1f100;
+    margin: 20px 10px;
+}
+table.checkListTable tbody th {
+    width: 250px;
+    padding: 10px;
+    font-size: 20px;
+}
+table.checkListTable td {
+    width: 550px;
+    padding: 10px;
+    font-size: 18px;
+    vertical-align: top;
+}
+table.checkListTable .even {
+    background: #f8e5e9;
+}
+
+table.exchangeTable {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 1px solid rgb(247, 205, 166);
+    border-left: 3px solid rgb(255, 3, 3);
+  margin : auto;
+}
+table.exchangeTable th {
+    width: 147px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color:  rgb(255, 57, 57);
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+}
+table.exchangeTable td {
+    width: 349px;
+    padding: 10px;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}

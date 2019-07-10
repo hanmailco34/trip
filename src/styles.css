@@ -1894,6 +1894,7 @@ input[type="checkbox"]{ width:auto;outline:none;}
 
 
 .menubar {
+    position: relative;
 	width : 100%;
 	border: none;
 	border: 0px;
@@ -1992,3 +1993,4 @@ input[type="checkbox"]{ width:auto;outline:none;}
 .menubar p {
 	clear: left;
 }
+
