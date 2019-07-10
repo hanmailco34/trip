@@ -8,12 +8,17 @@ import {FormsModule} from'@angular/forms';
 import {HttpClientModule} from'@angular/common/http';
 import { MainComponent } from './user/main/main.component';
 import { SlidersComponent } from './user/sliders/sliders.component';
+import { TestComponent } from './user/test/test.component';
+import { CheckListComponent } from './user/check-list/check-list.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MainComponent,
-    SlidersComponent
+    SlidersComponent,
+    TestComponent,
+    CheckListComponent
   ],
   imports: [
     BrowserModule,

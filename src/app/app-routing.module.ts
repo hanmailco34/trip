@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './user/login/login.component';
 import { SlidersComponent } from './user/sliders/sliders.component';
 import { MainComponent } from './user/main/main.component';
+import { TestComponent } from './user/test/test.component';
+import { CheckListComponent } from './user/check-list/check-list.component';
+
 
 const routes: Routes = [
   {path:'login',
@@ -13,8 +16,16 @@ const routes: Routes = [
   component:SlidersComponent
 },
 {
+  path:'test',
+  component:TestComponent
+},
+{
   path:'',
   component:MainComponent
+},
+{
+  path:'checkList',
+  component:CheckListComponent
 }
 ];
 
