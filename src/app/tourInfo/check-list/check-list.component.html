@@ -4,18 +4,6 @@
 
 <body>
   <div id="wrap">
-    <style>
-      .up_close {
-        background: url(//img.tourtips.com/images/common/close_btn_b.png) no-repeat right center;
-        position: absolute;
-        width: 38px;
-        height: 37px;
-        top: 15px;
-        right: 30px;
-        cursor: pointer
-      }
-    </style>
-
     <div id="subWrap">
       <div id="header">
         <!-- headTop -->
@@ -43,14 +31,14 @@
         </div>
         <div class="menubar">
           <ul>
-            <li><a href="/search">여행정보</a>
+            <li><a id="current">여행정보</a>
               <ul>
                 <li><a href="/search">Youtube검색</a></li>
                 <li><a href="/bsearch">Blog검색</a></li>
                 <li><a href="/checkList">Check List</a></li>
               </ul>
             </li>
-            <li><a href="#" id="current">커뮤니티</a>
+            <li><a>커뮤니티</a>
               <ul>
                 <li><a href="/review">여행 후기</a></li>
                 <li><a href="#">여행 계획</a></li>
@@ -58,7 +46,7 @@
                 <li><a href="#">여행 Tip</a></li>
               </ul>
             </li>
-            <li><a href="/hotel">호텔</a>
+            <li><a>호텔</a>
               <ul>
                 <li><a href="/hotel">추천 숙박</a></li>
               </ul>
@@ -152,7 +140,6 @@
             </tr>
           </tbody>
         </table>
-
         <br line-height="20px">
         <h2 class="checkList">환율 Check!</h2>
         <table class="exchangeTable">
@@ -166,23 +153,23 @@
           <tbody>
             <tr>
               <th>미국</th>
-              <td></td>
-              <td></td>
+              <td>{{ex[0].cashBuyingPrice}}</td>
+              <td>{{ex[0].cashSellingPrice}}</td>
             </tr>
             <tr>
               <th>일본</th>
-              <td></td>
-              <td></td>
+              <td>{{ex[1].cashBuyingPrice}}</td>
+              <td>{{ex[1].cashSellingPrice}}</td>
             </tr>
             <tr>
               <th>중국</th>
-              <td></td>
-              <td></td>
+              <td>{{ex[2].cashBuyingPrice}}</td>
+              <td>{{ex[2].cashSellingPrice}}</td>
             </tr>
             <tr>
               <th>유럽</th>
-              <td></td>
-              <td></td>
+              <td>{{ex[3].cashBuyingPrice}}</td>
+              <td>{{ex[3].cashSellingPrice}}</td>
             </tr>
           </tbody>
           <tr>

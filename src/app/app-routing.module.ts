@@ -7,7 +7,6 @@ import { NgModule } from '@angular/core';
 import { SearchComponent } from './tourInfo/search-video/search.component';
 import { MainComponent } from './main/main.component';
 import { TourReviewComponent } from './community/tour-review/tour-review.component';
-import { ExchangeComponent } from './tourInfo/exchange/exchange.component';
 import { HotelComponent } from './hotel/hotel.component';
 
 
@@ -38,10 +37,6 @@ const routes: Routes = [
 {
   path:'hotel',
   component:HotelComponent
-},
-{
-  path:'exchange',
-  component:ExchangeComponent
 }
 ];
 

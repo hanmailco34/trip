@@ -12,7 +12,6 @@ import { SearchBlogComponent } from './tourInfo/search-blog/search-blog.componen
 import { SearchComponent } from './tourInfo/search-video/search.component';
 import { SafePipe } from './tourInfo/search-video/safe-pipe';
 import { TourReviewComponent } from './community/tour-review/tour-review.component';
-import { ExchangeComponent } from './tourInfo/exchange/exchange.component';
 import { HotelComponent } from './hotel/hotel.component';
 
 @NgModule({
@@ -25,7 +24,6 @@ import { HotelComponent } from './hotel/hotel.component';
     SafePipe,
     SearchBlogComponent,
     TourReviewComponent,
-    ExchangeComponent,
     HotelComponent
   ],
   imports: [
