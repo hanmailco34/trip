@@ -1,0 +1,33 @@
+미국<input type="checkbox" [(ngModel)]="code1">
+일본<input type="checkbox" [(ngModel)]="code2">
+중국<input type="checkbox" [(ngModel)]="code3">
+유럽<input type="checkbox" [(ngModel)]="code4">
+<button (click)="exchange()">환율표보기</button>
+
+<div *ngIf=cmd>
+<table border="1" *ngFor="let ex of ex">
+  <tr>
+    <th>국가</th>
+    <td>{{ex.country}}</td>
+  </tr>
+  <tr>
+    <th>기준환율</th>
+    <td>{{ex.basePrice}}</td>    
+  </tr>
+  <tr>
+    <th>사실때</th>
+    <td>{{ex.cashBuyingPrice}}</td>
+  </tr>
+  <tr>
+    <th>파실때</th>
+    <td>{{ex.cashSellingPrice}}</td>
+  </tr>
+  <tr>
+    <th>통화</th>
+    <td>{{ex.currencyName}}</td>
+  </tr>  
+</table>
+<iframe width="400" height="300" src="https://www.youtube.com/embed/JvJ6qc7KsL0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="//tpc.googlesyndication.com/sodar/5k7CCto5.html" width="0" height="0" style="display: none;"></iframe>
+<video tabindex="-1" class="video-stream html5-main-video" controlslist="nodownload" style="width: 1280px; height: 720px; left: 0px; top: 0px;" src="https://www.youtube.com/453bcfa9-cf79-46be-8d8c-d2cb7a4a604f"></video>
+</div>

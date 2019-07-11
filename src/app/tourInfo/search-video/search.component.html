@@ -37,22 +37,22 @@
       </div>
       <div class="menubar">
           <ul>
-            <li><a href="#">여행정보</a>
+            <li><a href="#" id="current">여행정보</a>
               <ul>
-                <li><a href="#">Youtube검색</a></li>
-                <li><a href="#">Blog검색</a></li>
-                <li><a href="#">Check List</a></li>
+                <li><a href="/search">Youtube검색</a></li>
+                <li><a href="/bsearch">Blog검색</a></li>
+                <li><a href="/checkList">Check List</a></li>
               </ul></li>
-            <li><a href="#" id="current">커뮤니티</a>
+            <li><a href="#">커뮤니티</a>
               <ul>
-                <li><a href="/sliders">여행 후기</a></li>
+                <li><a href="/review">여행 후기</a></li>
                 <li><a href="#">여행 계획</a></li>
                 <li><a href="#">동행인 구하기</a></li>
                 <li><a href="#">여행 Tip</a></li>
               </ul></li>
-            <li><a href="#">호텔</a>
+            <li><a href="/hotel">호텔</a>
               <ul>
-                <li><a href="#">추천 숙박</a></li>
+                <li><a href="/hotel">추천 숙박</a></li>
               </ul></li>
               <li><a href="#">공지사항</a></li>
             <li><a href="#">마이페이지</a>
@@ -66,25 +66,35 @@
   
       <div class="lnb" >
         <h1 class="bigTitle">
-          <a href="#">커뮤니티</a>
+          <a href="/search">여행정보</a>
         </h1>
         <ul>
-          <li  class="allNotice on"><a href="sliders">여행 후기</a></li>
-          <li><a href="galleries">여행 계획</a></li>
-          <li class=""><a href="#">동행인 구하기</a></li>
-          <li class=""><a href="#">여행 Tip</a></li>
+          <li  class="allNotice on"><a href="/search">Youtube검색</a></li>
+          <li><a href="/bsearch">Blog검색</a></li>
+          <li><a href="/checkList">Check List</a></li>
         </ul>
 
   
       </div>
+     
       <!-- //lnb -->
-  
-      <!-- contents -->
       <div class="contents">
-  
-        <h2 class="titleSt02">여행 후기</h2>
-  
-       </div>
+  		   <h2 class="titleSt02">검색</h2>
+		        검색어 : <input type="text" [(ngModel)]="searchWord">
+						<button (click)="search()">검색</button>
+							<table *ngFor="let sc of scList" class="videoTable"> 
+								<tr>
+									<td>{{sc.snippet.title}}</td>
+								</tr>
+								<tr> 
+									<br> 
+						 			
+								 <iframe width="480" height="270" 
+								[src]="url(sc.id.videoId)|safe" frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+								</iframe>
+								</tr>
+						</table>
+      </div>
             </div>
             </div>
   </body>

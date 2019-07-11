@@ -33,20 +33,20 @@
 			<ul>
 				<li><a href="#">여행정보</a>
 					<ul>
-						<li><a href="/test">Youtube검색</a></li>
-						<li><a href="#">Blog검색</a></li>
+						<li><a href="/search">Youtube검색</a></li>
+						<li><a href="/bsearch">Blog검색</a></li>
 						<li><a href="/checkList">Check List</a></li>
 					</ul></li>
 				<li><a href="#" id="current">커뮤니티</a>
 					<ul>
-						<li><a href="/sliders">여행 후기</a></li>
+						<li><a href="/review">여행 후기</a></li>
 						<li><a href="#">여행 계획</a></li>
 						<li><a href="#">동행인 구하기</a></li>
 						<li><a href="#">여행 Tip</a></li>
 					</ul></li>
-				<li><a href="#">호텔</a>
+				<li><a href="/hotel">호텔</a>
 					<ul>
-						<li><a href="#">추천 숙박</a></li>
+						<li><a href="/hotel">추천 숙박</a></li>
 					</ul></li>
 					<li><a href="#">공지사항</a></li>
 				<li><a href="#">마이페이지</a>
@@ -57,5 +57,26 @@
 			</ul>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script>
+			$(function () {
+
+				$(document).ready(function () {
+
+					var scrollOffset = $('.menubar').offset();
+
+					$(window).scroll(function () {
+						if ($(document).scrollTop() > scrollOffset.top) {
+							$('.menubar').addClass('scroll-fixed');
+						}
+						else {
+							$('.menubar').removeClass('scroll-fixed');
+						}
+					});
+				});
+
+			});
+	</script>
 </body>
 </html>

@@ -6,19 +6,27 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './user/login/login.component';
 import {FormsModule} from'@angular/forms';
 import {HttpClientModule} from'@angular/common/http';
-import { MainComponent } from './user/main/main.component';
-import { SlidersComponent } from './user/sliders/sliders.component';
-import { TestComponent } from './user/test/test.component';
-import { CheckListComponent } from './user/check-list/check-list.component';
+import { MainComponent } from './main/main.component';
+import { CheckListComponent } from './tourInfo/check-list/check-list.component';
+import { SearchBlogComponent } from './tourInfo/search-blog/search-blog.component';
+import { SearchComponent } from './tourInfo/search-video/search.component';
+import { SafePipe } from './tourInfo/search-video/safe-pipe';
+import { TourReviewComponent } from './community/tour-review/tour-review.component';
+import { ExchangeComponent } from './tourInfo/exchange/exchange.component';
+import { HotelComponent } from './hotel/hotel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MainComponent,
-    SlidersComponent,
-    TestComponent,
-    CheckListComponent
+    CheckListComponent,
+    SearchComponent,
+    SafePipe,
+    SearchBlogComponent,
+    TourReviewComponent,
+    ExchangeComponent,
+    HotelComponent
   ],
   imports: [
     BrowserModule,

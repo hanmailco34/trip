@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+<body>
+  <div id="wrap">
+    <style>
+      .up_close {
+        background: url(//img.tourtips.com/images/common/close_btn_b.png) no-repeat right center;
+        position: absolute;
+        width: 38px;
+        height: 37px;
+        top: 15px;
+        right: 30px;
+        cursor: pointer
+      }
+    </style>
+
+    <div id="subWrap">
+      <div id="header">
+        <!-- headTop -->
+        <div class="headTop">
+          <span class="logo"> <a href="#"> <img src="//img.tourtips.com/images/pc/logo/origin.gif" alt="투어팁스">
+            </a>
+          </span>
+          <!-- loginArea : 로그인 전 -->
+          <div class="loginArea" style="width: 125px;">
+            <a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a>
+          </div>
+          <div id="search">
+            <form method="get" action="http://www.tourtips.com/ap/search/search/">
+              <fieldset>
+                <legend>검색</legend>
+                <span class="round"> <input type="text" name="cseq" title="검색어 입력" tabindex="1"
+                    style="ime-mode: active;">
+                  <button type="submit" name="search" id="search_btn" title="검색" tabindex="2">검색</button>
+                </span>
+              </fieldset>
+            </form>
+          </div>
+          <!-- //search -->
+
+        </div>
+        <div class="menubar">
+          <ul>
+            <li><a href="/search">여행정보</a>
+              <ul>
+                <li><a href="/search">Youtube검색</a></li>
+                <li><a href="/bsearch">Blog검색</a></li>
+                <li><a href="/checkList">Check List</a></li>
+              </ul>
+            </li>
+            <li><a href="#" id="current">커뮤니티</a>
+              <ul>
+                <li><a href="/review">여행 후기</a></li>
+                <li><a href="#">여행 계획</a></li>
+                <li><a href="#">동행인 구하기</a></li>
+                <li><a href="#">여행 Tip</a></li>
+              </ul>
+            </li>
+            <li><a href="/hotel">호텔</a>
+              <ul>
+                <li><a href="/hotel">추천 숙박</a></li>
+              </ul>
+            </li>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">마이페이지</a>
+              <ul>
+                <li><a href="#">내 작성글 보기</a></li>
+                <li><a href="#">회원 정보 수정</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script>
+        $(function () {
+
+          $(document).ready(function () {
+
+            var scrollOffset = $('.menubar').offset();
+
+            $(window).scroll(function () {
+              if ($(document).scrollTop() > scrollOffset.top) {
+                $('.menubar').addClass('scroll-fixed');
+              }
+              else {
+                $('.menubar').removeClass('scroll-fixed');
+              }
+            });
+          });
+
+        });
+      </script>
+      <div class="lnb">
+        <h1 class="bigTitle">
+          <a href="/search">여행정보</a>
+        </h1>
+        <ul>
+          <li><a href="/search">Youtube 검색</a></li>
+          <li><a href="/bsearch">Blog검색</a></li>
+          <li class="allNotice on"><a href="/checkList">Check List</a></li>
+        </ul>
+
+
+      </div>
+      <!-- //lnb -->
+
+      <!-- contents -->
+      <div class="contents">
+
+        <h2 class="checkList">Check List</h2>
+        <table class="checkListTable">
+          <thead>
+            <tr>
+              <th scope="cols">DATE.</th>
+              <th scope="cols">CHECK.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th><img src="//img.tourtips.com/images//pc/preparation/img_d-15.jpg" alt="D-15">비자발급</th>
+              <td>비자를 발급받아야 하는지 확인하세요~<br>
+                중국,인도,몽골,미국등은 비자 발급이 필수인 여행지입니다!
+              </td>
+            </tr>
+            <tr>
+              <th><img src="//img.tourtips.com/images//pc/preparation/img_d-10.jpg" alt="D-10">여행 준비물</th>
+              <td>여행 갈 때 꼭 챙겨야 할 준비물!!<br>
+                해당 여행지의 준비물과 수화물(짐)의 기준과 반입 금지 물품을 알아보아요.<br>
+              </td>
+            </tr>
+            <tr>
+              <th><img src="//img.tourtips.com/images//pc/preparation/img_d-5.jpg" alt="D-5">여행자 보험</th>
+              <td>여행지에서의 사고에 대비하여<br>
+                여행자 보험의 종류와 혜택을 꼼꼼히 살펴보고 가입하세요.
+              </td>
+            </tr>
+            <tr>
+              <th><img src="//img.tourtips.com/images//pc/preparation/img_d-3.jpg" alt="D-3">면세점 쇼핑</th>
+              <td>해외 여행의 또 하나의 재미!<br>
+                면세점 쇼핑하셨나요? 여러 혜택을 따져서 실속있게 쇼핑하세요.
+              </td>
+            </tr>
+            <tr>
+              <th><img src="//img.tourtips.com/images//pc/preparation/img_d-day.jpg" alt="D-DAY"></th>
+              <td>설레는 여행 당일!<br>
+                한번 더 꼼꼼히 챙기고 여행 출발!!
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br line-height="20px">
+        <h2 class="checkList">환율 Check!</h2>
+        <table class="exchangeTable">
+          <thead>
+            <tr>
+              <th>국가</th>
+              <th>사실 때</th>
+              <th>파실 때</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>미국</th>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>일본</th>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>중국</th>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>유럽</th>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+          <tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

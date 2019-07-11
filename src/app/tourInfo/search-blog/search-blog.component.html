@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+<body>
+  <div id="wrap">
+  <style>
+  .up_close {background:url(//img.tourtips.com/images/common/close_btn_b.png) no-repeat right center; position:absolute; width:38px; height:37px; 
+  top:15px; right:30px; cursor:pointer}
+  </style>
+  <div id="subWrap">
+    <div id="header">
+      <!-- headTop -->
+      <div class="headTop">
+        <span class="logo"> <a href="#"> <img
+            src="//img.tourtips.com/images/pc/logo/origin.gif" alt="투어팁스">
+        </a>
+        </span>
+        <!-- loginArea : 로그인 전 -->
+        <div class="loginArea" style="width: 125px;">
+          <a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a>
+        </div>
+        <div id="search">
+          <form method="get"
+            action="http://www.tourtips.com/ap/search/search/">
+            <fieldset>
+              <legend>검색</legend>
+              <span class="round"> <input type="text" name="cseq"
+                title="검색어 입력" tabindex="1" style="ime-mode: active;">
+                <button type="submit" name="search" id="search_btn" title="검색"
+                  tabindex="2">검색</button>
+              </span>
+            </fieldset>
+          </form>
+        </div>
+        <!-- //search -->
+  
+      </div>
+      <div class="menubar">
+          <ul>
+            <li><a href="#" id="current">여행정보</a>
+              <ul>
+                <li><a href="/search">Youtube검색</a></li>
+                <li><a href="/bserch">Blog검색</a></li>
+                <li><a href="/checkList">Check List</a></li>
+              </ul></li>
+            <li><a href="#">커뮤니티</a>
+              <ul>
+                <li><a href="/review">여행 후기</a></li>
+                <li><a href="#">여행 계획</a></li>
+                <li><a href="#">동행인 구하기</a></li>
+                <li><a href="#">여행 Tip</a></li>
+              </ul></li>
+            <li><a href="/hotel">호텔</a>
+              <ul>
+                <li><a href="/hotel">추천 숙박</a></li>
+              </ul></li>
+              <li><a href="#">공지사항</a></li>
+            <li><a href="#">마이페이지</a>
+              <ul>
+                <li><a href="#">내 작성글 보기</a></li>
+                <li><a href="#">회원 정보 수정</a></li>
+              </ul></li>
+          </ul>
+        </div>
+    </div>
+  
+      <div class="lnb" >
+        <h1 class="bigTitle">
+          <a href="/search">여행정보</a>
+        </h1>
+        <ul>
+          <li><a href="/search">Youtube검색</a></li>
+          <li class="allNotice on"><a href="/bsearch">Blog검색</a></li>
+          <li><a href="/checkList">Check List</a></li>
+        </ul>
+
+  
+      </div>
+     
+      <!-- //lnb -->
+      <div class="contents">
+  		   <h2 class="titleSt02">검색</h2>
+		        검색어 : <input type="text" [(ngModel)]="searchWord">
+						<button (click)="nsearch()">검색</button>
+                        <table *ngFor="let ns of nsList" class="searchResult">
+                                <tr><a href="{{ns.link}}">{{ns.title}}</a></tr>
+                                <td>{{ns.description}}</td>
+                        </table>
+      </div>
+            </div>
+            </div>
+  </body>
+  </html>
+
+
+  

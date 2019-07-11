@@ -1,10 +1,14 @@
-import { NgModule } from '@angular/core';
+
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './user/login/login.component';
-import { SlidersComponent } from './user/sliders/sliders.component';
-import { MainComponent } from './user/main/main.component';
-import { TestComponent } from './user/test/test.component';
-import { CheckListComponent } from './user/check-list/check-list.component';
+import { CheckListComponent } from './tourInfo/check-list/check-list.component';
+import { SearchBlogComponent } from './tourInfo/search-blog/search-blog.component';
+import { NgModule } from '@angular/core';
+import { SearchComponent } from './tourInfo/search-video/search.component';
+import { MainComponent } from './main/main.component';
+import { TourReviewComponent } from './community/tour-review/tour-review.component';
+import { ExchangeComponent } from './tourInfo/exchange/exchange.component';
+import { HotelComponent } from './hotel/hotel.component';
 
 
 const routes: Routes = [
@@ -12,12 +16,16 @@ const routes: Routes = [
   component:LoginComponent
 },
 {
-  path:'sliders',
-  component:SlidersComponent
+  path:'review',
+  component:TourReviewComponent
 },
 {
-  path:'test',
-  component:TestComponent
+  path:'search',
+  component:SearchComponent
+},
+{
+  path:'bsearch',
+  component:SearchBlogComponent
 },
 {
   path:'',
@@ -26,6 +34,14 @@ const routes: Routes = [
 {
   path:'checkList',
   component:CheckListComponent
+},
+{
+  path:'hotel',
+  component:HotelComponent
+},
+{
+  path:'exchange',
+  component:ExchangeComponent
 }
 ];
 
