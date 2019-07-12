@@ -1997,14 +1997,6 @@ input[type="checkbox"]{ width:auto;outline:none;}
 	clear: left;
 }
 
-body{
-    margin: 0px;
-    padding: 0px;
-}
-.scroll-fixed{
-    position: fixed;
-    top: 0px;
-}
 
 
 

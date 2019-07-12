@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+<body>
+  <div id="wrap">
+  <style>
+  .up_close {background:url(//img.tourtips.com/images/common/close_btn_b.png) no-repeat right center; position:absolute; width:38px; height:37px; 
+  top:15px; right:30px; cursor:pointer}
+  </style>
+  <div id="subWrap">
+    <div id="header">
+      <!-- headTop -->
+      <div class="headTop">
+        <span class="logo"> <a href="#"> <img
+            src="//img.tourtips.com/images/pc/logo/origin.gif" alt="투어팁스">
+        </a>
+        </span>
+        <!-- loginArea : 로그인 전 -->
+        <div class="loginArea" style="width: 125px;">
+          <a href="#">로그인</a> <span>|</span> <a href="#">회원가입</a>
+        </div>
+        <div id="search">
+          <form method="get"
+            action="http://www.tourtips.com/ap/search/search/">
+            <fieldset>
+              <legend>검색</legend>
+              <span class="round"> <input type="text" name="cseq"
+                title="검색어 입력" tabindex="1" style="ime-mode: active;">
+                <button type="submit" name="search" id="search_btn" title="검색"
+                  tabindex="2">검색</button>
+              </span>
+            </fieldset>
+          </form>
+        </div>
+        <!-- //search -->
+  
+      </div>
+      <div class="menubar">
+          <ul>
+            <li><a href="#" id="current">여행정보</a>
+              <ul>
+                <li><a href="/search">Youtube검색</a></li>
+                <li><a href="/bsearch">Blog검색</a></li>
+                <li><a href="/checkList">Check List</a></li>
+              </ul></li>
+            <li><a href="#">커뮤니티</a>
+              <ul>
+                <li><a href="/review">여행 후기</a></li>
+                <li><a href="#">여행 계획</a></li>
+                <li><a href="#">동행인 구하기</a></li>
+                <li><a href="#">여행 Tip</a></li>
+              </ul></li>
+            <li><a href="/hotel">호텔</a>
+              <ul>
+                <li><a href="/hotel">추천 숙박</a></li>
+              </ul></li>
+              <li><a href="#">공지사항</a></li>
+            <li><a href="#">마이페이지</a>
+              <ul>
+                <li><a href="#">내 작성글 보기</a></li>
+                <li><a href="#">회원 정보 수정</a></li>
+              </ul></li>
+          </ul>
+        </div>
+    </div>
+  
+      <div class="lnb" >
+        <h1 class="bigTitle">
+          <a href="/공지사항">공지사항</a>
+        </h1>
+        <ul>
+          <li  class="allNotice on"><a href="/notice">공지사항</a></li>
+        </ul>
+
+  
+      </div>
+     
+      <!-- //lnb -->
+      <div class="contents">
+		        <table class="noticeTable">
+              <colgroup>
+                <col style="width:10%">
+                <col style="width:25%">
+                <col style="width:20%">
+                <col style="width:10%">
+                <col style="width:7%">
+              </colgroup>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">작성자</th>
+                <th scope="col">작성일</th>
+                <th scope="col">조회수</th>
+              </tr>
+              <tr>
+                <td>테스트</td>
+                <td>테스트테스트테테테스트</td>
+                <td>테스트</td>
+                <td>테스트</td>
+                <td>테스트</td>
+              </tr>
+              
+            </table>
+
+            <!--Modal button -->
+            <div class="col text-right">
+              <button type="button" class="btn btn-outline-secondary mt-3" data-toggle="modal" data-target="#noticeModal" (click)="showModal()">
+                글쓰기
+              </button>
+            </div>
+      </div>
+            </div>
+            </div>
+
+<!-- The Modal -->
+<div class="modal fade" id="noticeModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">공지사항 작성</h4>
+          <button type="button" class="close" (click)="hideModal()">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body mb-3">
+          <label>제목</label>
+          <input type="text" name="lectureName" class="form-control mt-2 mb-3" maxlength="20">
+          <label>내용</label>
+          <textarea name="evaluationContent" class="form-control mt-2" maxlength="2048" style="height:500px;"></textarea>	
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="sendModal()" >등록</button>
+          <button type="button" class="btn btn-danger" (click)="hideModal()">취소</button>
+  
+          <!-- this button is hidden, used to close from typescript -->
+          <button type="button" id="close-modal" data-dismiss="modal" style="display: none">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+  </html>
+
+
+  

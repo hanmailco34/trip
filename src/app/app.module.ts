@@ -13,6 +13,8 @@ import { SearchComponent } from './tourInfo/search-video/search.component';
 import { SafePipe } from './tourInfo/search-video/safe-pipe';
 import { TourReviewComponent } from './community/tour-review/tour-review.component';
 import { HotelComponent } from './hotel/hotel.component';
+import { NoticeBoardComponent } from './notice/notice-board/notice-board.component';
+import { SignupComponent } from './user/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HotelComponent } from './hotel/hotel.component';
     SafePipe,
     SearchBlogComponent,
     TourReviewComponent,
-    HotelComponent
+    HotelComponent,
+    NoticeBoardComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

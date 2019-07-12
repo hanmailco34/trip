@@ -8,11 +8,17 @@ import { SearchComponent } from './tourInfo/search-video/search.component';
 import { MainComponent } from './main/main.component';
 import { TourReviewComponent } from './community/tour-review/tour-review.component';
 import { HotelComponent } from './hotel/hotel.component';
+import { NoticeBoardComponent } from './notice/notice-board/notice-board.component';
+import { SignupComponent } from './user/signup/signup.component';
 
 
 const routes: Routes = [
   {path:'login',
   component:LoginComponent
+},
+{
+  path:'signup',
+  component:SignupComponent
 },
 {
   path:'review',
@@ -33,6 +39,10 @@ const routes: Routes = [
 {
   path:'checkList',
   component:CheckListComponent
+},
+{
+  path:'noticeboard',
+  component:NoticeBoardComponent
 },
 {
   path:'hotel',

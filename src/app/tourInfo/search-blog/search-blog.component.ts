@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Nsearch } from './nsearch';
-import { ApiSearchService } from '../../ApiSearchService';
+import { ApiSearchService } from '../ApiSearchService';
 
 @Component({
   selector: 'app-search-blog',
