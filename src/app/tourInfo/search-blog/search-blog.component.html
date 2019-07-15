@@ -74,15 +74,29 @@
       </div>
      
       <!-- //lnb -->
+     
       <div class="contents">
-  		   <h2 class="titleSt02">검색</h2>
-		        검색어 : <input type="text" [(ngModel)]="searchWord">
-						<button (click)="nsearch()">검색</button>
-                        <table *ngFor="let ns of nsList" class="searchResult">
-                                <tr><a href="{{ns.link}}">{{ns.title}}</a></tr>
-                                <td>{{ns.description}}</td>
-                        </table>
-      </div>
+          검색어 : <input type="text" [(ngModel)]="searchWord" style="width:250px; height:30px ;"> &nbsp;
+          <button (click)="nsearch()" style="height:30px ;" class="btn btn-outline-secondary">검색</button>
+          <br><br>
+        <table class="searchResult" style="width: 737px">
+          <colgroup>
+            <col style="width:25%">
+            <col style="width:50%">
+             <col style="width:25%">
+          </colgroup>
+          <tr>
+            <th scope="col">제목</th>
+            <th scope="col">내용</th>
+            <th scope="col">작성자</th>
+          </tr>
+          <tr *ngFor="let ns of nsList">
+          <td><a href="{{ns.link}}">{{ns.title}}</a></td>
+          <td>{{ns.description}}</td>
+          <td>{{ns.bloggername}}</td>
+          </tr>
+        </table>
+    </div>
             </div>
             </div>
   </body>

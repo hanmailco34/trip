@@ -16,6 +16,8 @@ import { HotelComponent } from './hotel/hotel.component';
 import { NoticeBoardComponent } from './notice/notice-board/notice-board.component';
 import { SignupComponent } from './user/signup/signup.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,13 +30,15 @@ import { SignupComponent } from './user/signup/signup.component';
     TourReviewComponent,
     HotelComponent,
     NoticeBoardComponent,
-    SignupComponent
+    SignupComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

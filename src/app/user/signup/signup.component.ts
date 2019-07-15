@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+var $:any;
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() { 
+    
   }
 
+  ngOnInit() {
+   
+  }
+ 
 }
