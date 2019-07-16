@@ -15,6 +15,12 @@ import { TourReviewComponent } from './community/tour-review/tour-review.compone
 import { HotelComponent } from './hotel/hotel.component';
 import { NoticeBoardComponent } from './notice/notice-board/notice-board.component';
 import { SignupComponent } from './user/signup/signup.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { TipsComponent } from './community/tips/tips.component';
+import { TipsWriteComponent } from './community/tips/tips-write/tips-write.component';
+import { ReviewWriteComponent } from './community/tour-review/review-write/review-write.component';
+import { TestScrollerComponent } from './test-scroller/test-scroller.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 
@@ -31,14 +37,19 @@ import { SignupComponent } from './user/signup/signup.component';
     HotelComponent,
     NoticeBoardComponent,
     SignupComponent,
-    
+    TipsComponent,
+    TipsWriteComponent,
+    ReviewWriteComponent,
+    TestScrollerComponent,
+    MenuComponent 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserModule
+    BrowserModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,63 +1,46 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-		<meta charset="UTF-8">
-  <title>Home</title>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+
+  <!-- Demo styles -->
+  <style>
+    
+  </style>
 </head>
-<body class="mdb-skin">
-	<div id="header">
-		<!-- headTop -->
-		<div class="headTop">
-			<span class="logo"> <a href="#"> 
-			<img src="//img.tourtips.com/images/pc/logo/origin.gif" alt="투어팁스">
-			</a>
-			</span>
-			<!-- loginArea : 로그인 전 -->
-			<div class="loginArea" style="width: 125px;">
-				<a href="/login">로그인</a> <span>|</span> <a href="/signup">회원가입</a>
-			</div>
-			<div id="search">
-				<form method="get" action="#">
-					<fieldset>
-						<legend>검색</legend>
-						<span class="round"> <input type="text" name="cseq"	title="검색어 입력" tabindex="1" style="ime-mode: active;">
-							<button type="submit" name="search" id="search_btn" title="검색" tabindex="2">검색</button>
-						</span>
-					</fieldset>
-				</form>
-			</div>
-			<!-- //search -->
+<body>
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRT5DQ5IW0qBc2HWoLhTKGzlEJgexpkSk3GJtP2zFY9VXSC6Xx"></div>
+      <div class="swiper-slide"><img src="http://image.chosun.com/sitedata/image/201808/08/2018080801525_1.jpg"></div>
+      <div class="swiper-slide"><img src="http://image.chosun.com/sitedata/image/201808/08/2018080801525_2.jpg"></div>
+      <div class="swiper-slide"><img src="https://postfiles.pstatic.net/20140523_169/teckwrap_1400821454869MOtgM_JPEG/%C0%CC%C7%C1%BF%C2%B8%AE_%C6%F7%BD%BA%C5%CD.jpg?type=w1"></div>
+      <div class="swiper-slide"><img src="http://image.chosun.com/sitedata/image/201808/08/2018080801525_0.jpg"></div>
+      <div class="swiper-slide"><img src="https://postfiles.pstatic.net/20140523_253/teckwrap_1400821638102c3ICO_JPEG/%C0%CC%C7%C1%BF%C2%B8%AE_%C1%A6%B4%CF%C6%DB%B9%AB%BA%F1.jpg?type=w1"></div>
+      <div class="swiper-slide"><img src="https://post-phinf.pstatic.net/MjAxODEwMDhfNzcg/MDAxNTM4OTkxNDAzNTg0.dbclkZ89npkPt4x1zTiG_lFNlsDm9OdW757KX0PKkzkg.Fe6xwx8lkakx56tQSZCB5xZttBfZwObq6GAvQWaxFzgg.JPEG/mug_obj_1538991403752602.jpg?type=w1080"></div>
+      <div class="swiper-slide"><img src="https://postfiles.pstatic.net/20140523_212/teckwrap_1400821784992X82mc_JPEG/%C0%CC%C7%C1%BF%C2%B8%AE_%C8%F7%B7%CE%C0%CE.jpg?type=w1"></div>
+      <div class="swiper-slide"><img src="https://pds.joins.com//news/component/htmlphoto_mmdata/201711/14/56cb8c49-d757-49ae-beb6-fdd664e76404.jpg"></div>
+      <div class="swiper-slide"><img src="http://file3.instiz.net/data/file3/2018/09/06/2/e/1/2e15bee787ea6758f27225ee3090549f.jpg"></div>
+    </div>
+  </div>
 
-		</div>
-		<div class="menubar" >
-			<ul>
-				<li><a>여행정보</a>
-					<ul>
-						<li><a href="/search">Youtube검색</a></li>
-						<li><a href="/bsearch">Blog검색</a></li>
-						<li><a href="/checkList">Check List</a></li>
-					</ul></li>
-				<li><a>커뮤니티</a>
-					<ul>
-						<li><a href="/review">여행 후기</a></li>
-						<li><a href="#">여행 계획</a></li>
-						<li><a href="#">동행인 구하기</a></li>
-						<li><a href="#">여행 Tip</a></li>
-					</ul></li>
-				<li><a>호텔</a>
-					<ul>
-						<li><a href="/hotel">추천 숙박</a></li>
-					</ul></li>
-					<li><a href="/noticeboard">공지사항</a></li>
-				<li><a>마이페이지</a>
-					<ul>
-						<li><a href="#">내 작성글 보기</a></li>
-						<li><a href="#">회원 정보 수정</a></li>
-					</ul></li>
-			</ul>
-		</div>
-	</div>
-
-	
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container',
+    {
+      autoplay:{
+        delay:5000,
+      },
+    });
+  </script>
 </body>
 </html>

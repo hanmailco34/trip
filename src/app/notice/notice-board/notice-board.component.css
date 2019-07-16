@@ -1,3 +1,11 @@
+#container{
+    margin-top: 20px;
+}
+
+.contents{
+    border-right-width: thick;
+    color: black;
+}
 .noticeTable{
     border-top: 1px solid red;
     border-collapse: collapse;
@@ -20,3 +28,20 @@ tr td{
 btn{
     text-align: right;
 }
+.modal {
+    text-align: center;
+    position: fixed;
+    margin-top: 5%;
+}
+.modal-dialog.modal-80size {
+    width: 80%;
+    height: 80%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .modal-content.modal-80size {
+    height: auto;
+    min-height: 80%;
+  }
+

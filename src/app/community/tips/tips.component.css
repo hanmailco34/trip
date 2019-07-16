@@ -1,10 +1,10 @@
-.searchResult{
-    border-top: 1px solid red;
+.tipsTable{
+    border-top: 1px solid rgb(194, 100, 38);
     border-collapse: collapse;
     border-spacing: 25px;
     font-size:15px;
-    border-bottom: 1px solid red;
-    
+    color:rgb(34, 34, 30);
+    border-bottom: 1px solid rgb(194, 100, 38);
     
 }
 th{
