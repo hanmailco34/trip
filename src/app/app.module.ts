@@ -23,7 +23,6 @@ import { TestScrollerComponent } from './test-scroller/test-scroller.component';
 import { MenuComponent } from './menu/menu.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
