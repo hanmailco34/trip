@@ -13,7 +13,8 @@ import { SignupComponent } from './user/signup/signup.component';
 import { TipsComponent } from './community/tips/tips.component';
 import { TipsWriteComponent } from './community/tips/tips-write/tips-write.component';
 import { ReviewWriteComponent } from './community/tour-review/review-write/review-write.component';
-import { TestScrollerComponent } from './test-scroller/test-scroller.component';
+import { TourPlanComponent } from './community/tour-plan/tour-plan.component';
+import { PlanWriteComponent } from './community/tour-plan/plan-write/plan-write.component';
 
 
 const routes: Routes = [
@@ -41,6 +42,14 @@ const routes: Routes = [
   component:TipsWriteComponent
 },
 {
+  path:'tourplan',
+  component:TourPlanComponent
+},
+{
+  path:'planwrite',
+  component:PlanWriteComponent
+},
+{
   path:'search',
   component:SearchComponent
 },
@@ -64,11 +73,6 @@ const routes: Routes = [
   path:'hotel',
   component:HotelComponent
 }
-// ,
-// {
-//   path:'test',
-//   component:TestScrollerComponent
-// }
 ];
 
 @NgModule({

@@ -1,21 +1,21 @@
-body{
-  text-align: center;
-}
+
 table{
   width:500px;
+  height: auto;
   margin:auto;
   text-align: center;
   border: 1px solid rgb(255, 142, 142);
 }
+
 input{
   width:450px;
   height: 45px;
 }
 label{
   font-size: 15px;
+  /* padding-top:10px; */
 }
 select{
-  
     width:450px;
     height: 45px;
   

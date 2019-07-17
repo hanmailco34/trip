@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-</head>
-<body>
-    <div id="wrap">
-        <style>
-        .up_close {background:url(//img.tourtips.com/images/common/close_btn_b.png) no-repeat right center; position:absolute; width:38px; height:37px; 
-        top:15px; right:30px; cursor:pointer}
-        </style>
-        <div id="subWrap">
-          <div id="header">
-            <!-- headTop -->
-            <div class="headTop">
-              <span class="logo"> <a href="#"> <img
-                  src="//img.tourtips.com/images/pc/logo/origin.gif" alt="투어팁스">
-              </a>
-              </span>
-          </div>
-       </div>
-    </div>  
-    </div>        
+        <div id="subWrap">  
     <form class="form-horizontal" action='' method="POST">
         <fieldset>
             <table>
@@ -32,10 +10,9 @@
           
           <div class="control-group">
             <!-- Username -->
-            <label class="control-label col-sm-11" style="text-align: left;" for="username"><b>이름</b></label>
+            <label class="control-label col-sm-11" style="text-align: left;" for="userId"><b>아이디</b></label>
             <div class="controls">
-              <input type="text" id="username" name="username" placeholder="your name" class="input-xlarge" style="text-align: center;">
-              
+              <input type="text" id="userId" name="userId" placeholder="your name" class="input-xlarge" style="text-align: center;" [(ngModel)]="user.userId">
             </div>
           </div>
           <br>
@@ -43,7 +20,7 @@
               <!-- Username -->
               <label class="control-label col-sm-11" style="text-align: left;" for="userNick"><b>닉네임</b></label>
               <div class="controls">
-                <input type="text" id="userNick" name="userNick" placeholder="your Nickname" class="input-xlarge" style="text-align: center;">
+                <input type="text" id="userNick" name="userNick" placeholder="your Nickname" class="input-xlarge" style="text-align: center;" [(ngModel)]="user.userNick">
                 
               </div>
             </div>
@@ -52,7 +29,7 @@
               <!-- Password-->
               <label class="control-label col-sm-11" style="text-align: left;" for="password"><b>비밀번호</b></label>
               <div class="controls">
-                <input type="password" id="password" name="password" placeholder="Password should be at least 4 characters" class="input-xlarge" style="text-align: center;">
+                <input type="password" id="password" name="password" placeholder="Password should be at least 4 characters" class="input-xlarge" style="text-align: center;" [(ngModel)]="user.userPwd">
               </div>
             </div>
           <br>
@@ -60,7 +37,7 @@
               <!-- Password -->
               <label class="control-label col-sm-11" style="text-align: left;" for="password_confirm"><b>비밀번호 확인</b></label>
               <div class="controls">
-                <input type="password" id="password_confirm" name="password_confirm" placeholder="Rewrite your Password" class="input-xlarge"  style="text-align: center;">
+                <input type="password" id="password_confirm" name="password_confirm" placeholder="Rewrite your Password" class="input-xlarge"  style="text-align: center;" [(ngModel)]="user.userPwdChk">
               </div>
             </div>
             <br>
@@ -68,7 +45,7 @@
             <!-- E-mail -->
             <label class="control-label col-sm-11" style="text-align: left;" for="email"><b>E-mail</b></label>
             <div class="controls">
-              <input type="text" id="email" name="email" style="text-align: center;" placeholder="Please provide your E-mail" class="input-xlarge">
+              <input type="text" id="email" name="email" style="text-align: center;" placeholder="Please provide your E-mail" class="input-xlarge"  [(ngModel)]="user.userEmail">
             </div>
           </div>
           <br>
@@ -76,7 +53,7 @@
               <!-- tel -->
               <label class="control-label col-sm-11" style="text-align: left;" for="email"><b>휴대전화</b></label>
               <div class="controls">
-                <input type="tel" id="phone" name="phone" style="text-align: center;" placeholder="Phone number" class="input-xlarge">
+                <input type="tel" id="phone" name="phone" style="text-align: center;" placeholder="Phone number" class="input-xlarge" [(ngModel)]="user.userTel">
               </div>
           </div>
           <br>
@@ -84,18 +61,18 @@
               <!-- birth -->
               <label class="control-label col-sm-11" style="text-align: left;" for="email"><b>생년월일</b></label>
               <div class="controls">
-                <input type="date" id="phone" name="phone" style="text-align: center;" placeholder="Phone number" class="input-xlarge">
+                <input type="date" id="phone" name="phone" style="text-align: center;" placeholder="Phone number" class="input-xlarge" [(ngModel)]="user.userBirth">
               </div>
           </div>
           <br>
           <div class="control-group">
               <!-- gender -->
-              <label class="control-label col-sm-11" style="text-align: left;" for="email"><b>성별</b></label>
+              <label class="control-label col-sm-11" style="text-align: left;" for="email" ><b>성별</b></label>
               <div class="controls">
-                <select id='gender'>
+                <select id='gender' [(ngModel)]="user.userGender">
                   <option>선택</option>
-                  <option value="1">남자</option>
-                  <option value="2">여자</option>
+                  <option value="M">남자</option>
+                  <option value="F">여자</option>
                 </select>
               </div>
           </div>
@@ -104,12 +81,11 @@
           <div class="control-group">
             <!-- Button -->
             <div class="controls">
-              <button class="btn btn-outline-success">가입하기</button>
+              <button class="btn btn-outline-success" type="button" (click)="join()">가입하기</button>
             </div>
             <br>
           </div>
         </table>
         </fieldset>
       </form>
-</body>
-</html>
+    </div> 

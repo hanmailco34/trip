@@ -6,7 +6,7 @@
   <title>Swiper demo</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Nanum+Gothic+Coding|Nanum+Myeongjo:400,700|Poor+Story|Roboto+Mono:400,500,700|Roboto+Slab|Source+Sans+Pro|Sunflower:300|Ubuntu&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -43,28 +43,29 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-  </div>
+
 
   <div class="about_area">
-    <h2>인기여행지!!</h2>
+    <h2>인기 여행지!!
+    <br></h2>
     <div class="about_box">
       <ul class="place_list box_inner clear">
-        <li><a href="#" onclick="$('.popup_base').css('height',$(document).height());$('.contact_pop').show();">
-            <img class="topplace" src="../assets/imgs/tripgam.png">
+        <li><a href="#" onclick="$('.popup_base').css('height',$(document).height(300));$('.contact_pop').show();">
+            <img class="rounded" src="../assets/imgs/tripgam.png" >
             <h3>일단 로고</h3>
             <p class="txt">일단 로고를 넣어 봅미다.</p>
             <span class="view">View</span>
           </a>
         </li>
         <li><a href="#" onclick="$('.popup_base').css('height',$(document).height());$('.contact_pop').show();">
-            <img class="topplace" src="../assets/imgs/tripgam.png">
+            <img class="rounded" src="../assets/imgs/tripgam.png">
             <h3>일단 로고</h3>
             <p class="txt">일단 로고를 넣어 봅미다.</p>
             <span class="view">View</span>
           </a>
         </li>
         <li><a href="#" onclick="$('.popup_base').css('height',$(document).height());$('.contact_pop').show();">
-            <img class="topplace" src="../assets/imgs/tripgam.png">
+            <img class="rounded" src="../assets/imgs/tripgam.png">
             <h3>일단 로고</h3>
             <p class="txt">일단 로고를 넣어 봅미다.</p>
             <span class="view">View</span>
@@ -73,6 +74,92 @@
       </ul>
     </div>
   </div>
+
+
+  <footer>
+    <div class="foot_area box_inner">
+      <ul class="foot_list clear">
+        <li><a href=";">이용약관</a></li>
+        <li><a href=";">개인정보 취급 방침</a></li>
+      </ul>
+      <h2>여행감(Go Trip!)</h2>
+      <p class="addr">가산디지털단지 제이플라츠 5층
+        <span class="gubun">/</span>
+        <span class="br_line">대표전화
+          <span class="space0">010-2923-0112</span>
+          <span class="gubun">/</span>
+          <span class="br_line">E-mail :
+            <span class="space0">leesoobin@naver.com</span>
+          </span>
+        </span>
+      </p>
+      <p class="copy box_inner">Copyright(c) GoTrip</p>
+      <ul class="snslink clear">
+        <li><a href="">blog</a></li>
+      </ul>
+    </div>
+  </footer>
+  </div>
+  <div style="height: 300px;"></div>
+  <a href="#layer1" class="btn-example">일반 팝업레이어</a>
+  <div id="layer1" class="pop-layer">
+      <div class="pop-container">
+          <div class="pop-conts">
+              <!--content //-->
+              <p class="ctxt mb20">Thank you.<br>
+                  Your registration was submitted successfully.<br>
+                  Selected invitees will be notified by e-mail on JANUARY 24th.<br><br>
+                  Hope to see you soon!
+              </p>
+  
+              <div class="btn-r">
+                  <a href="#" class="btn-layerClose">Close</a>
+              </div>
+              <!--// content-->
+          </div>
+      </div>
+  </div>
+  <br/><br/>
+<script>
+
+$('.btn-example').click(function(){
+        var $href = $(this).attr('href');
+        layer_popup($href);
+    });
+    function layer_popup(el){
+
+        var $el = $(el);        //레이어의 id를 $el 변수에 저장
+        var isDim = $el.prev().hasClass('dimBg');   //dimmed 레이어를 감지하기 위한 boolean 변수
+
+        isDim ? $('.dim-layer').fadeIn() : $el.fadeIn();
+
+        var $elWidth = ~~($el.outerWidth()),
+            $elHeight = ~~($el.outerHeight()),
+            docWidth = $(document).width(),
+            docHeight = $(document).height();
+
+        // 화면의 중앙에 레이어를 띄운다.
+        if ($elHeight < docHeight || $elWidth < docWidth) {
+            $el.css({
+                marginTop: -$elHeight /2,
+                marginLeft: -$elWidth/2
+            })
+        } else {
+            $el.css({top: 0, left: 0});
+        }
+
+        $el.find('a.btn-layerClose').click(function(){
+            isDim ? $('.dim-layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
+            return false;
+        });
+
+        $('.layer .dimBg').click(function(){
+            $('.dim-layer').fadeOut();
+            return false;
+        });
+
+    }
+</script>
 </body>
 
 </html>

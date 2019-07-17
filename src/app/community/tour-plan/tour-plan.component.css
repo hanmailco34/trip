@@ -1,0 +1,19 @@
+.plansTable{
+    border-top: 1px solid rgb(194, 100, 38);
+    border-collapse: collapse;
+    border-spacing: 25px;
+    font-size:15px;
+    color:rgb(34, 34, 30);
+    border-bottom: 1px solid rgb(194, 100, 38);
+    
+}
+th{
+    padding:10px;
+    height: 50px;
+}
+
+tr td{
+    height: 50px;
+    padding: 10px;
+    border-top: 1px solid rgb(221, 221, 221);
+}

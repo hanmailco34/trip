@@ -19,8 +19,9 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { TipsComponent } from './community/tips/tips.component';
 import { TipsWriteComponent } from './community/tips/tips-write/tips-write.component';
 import { ReviewWriteComponent } from './community/tour-review/review-write/review-write.component';
-import { TestScrollerComponent } from './test-scroller/test-scroller.component';
 import { MenuComponent } from './menu/menu.component';
+import { TourPlanComponent } from './community/tour-plan/tour-plan.component';
+import { PlanWriteComponent } from './community/tour-plan/plan-write/plan-write.component';
 
 
 @NgModule({
@@ -39,8 +40,9 @@ import { MenuComponent } from './menu/menu.component';
     TipsComponent,
     TipsWriteComponent,
     ReviewWriteComponent,
-    TestScrollerComponent,
-    MenuComponent 
+    MenuComponent,
+    TourPlanComponent,
+    PlanWriteComponent 
   ],
   imports: [
     BrowserModule,
