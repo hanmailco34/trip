@@ -1,29 +1,31 @@
 <form #updatePerson="ngForm" (ngSubmit)="updateProfile(updatePerson)" name="profileForm">
   <div class="row">
-    <div class="col-md-8 mb-3">
-      <label for="userName" class="font-weight-bold" style="font-size:1.2em;">회원이름</label>
-      <input type="text" class="form-control is-valid font-weight-bold" id="userName" [(ngModel)]="loggedUser.uname" name="userName" #userName="ngModel" [disabled]="true">
-      <!-- 삭제한속성 : (ngModelChange)="enbUpdBut = !enbUpdBut" / [(ngClass)] : 초록색테두리 / required-->
-      <div class="invalid-feedback">
-        username is Mandatory.
-      </div>
-    </div>
+    
     <div class="col-md-8 mb-3">
       <label for="userId" class="font-weight-bold" style="font-size:1.2em;">아이디</label>
-      <input type="text" class="form-control is-valid font-weight-bold" id="userId" [disabled]="true" name="userId" [(ngModel)]="loggedUser.uid">
+      <input type="text" class="form-control is-valid font-weight-bold" id="userId" [disabled]="true" name="userId" [(ngModel)]="loggedUser.uid" disabled/>
     </div>
+
+    <div class="col-md-8 mb-3">
+        <label for="userName" class="font-weight-bold" style="font-size:1.2em;">닉네임</label>
+        <input type="text" class="form-control is-valid font-weight-bold" id="userNick" [(ngModel)]="loggedUser.userNick" name="userNick" #userName="ngModel" [disabled]="true">
+        <!-- 삭제한속성 : (ngModelChange)="enbUpdBut = !enbUpdBut" / [(ngClass)] : 초록색테두리 / required-->
+        <div class="invalid-feedback">
+          
+        </div>
+      </div>
   
     <div class="col-md-8 mb-3">
       <label for="userPwd" class="font-weight-bold badge grey" style="font-size:1em;">비밀번호(20자이내)</label>
-      <input type="password" class="form-control" id="userPwd" name="userPwd" [(ngModel)]="loggedUser.upw">
+      <input type="password" class="form-control" id="userPwd" name="userPwd" [(ngModel)]="loggedUser.userPwd">
     </div>
     <div class="col-md-8 mb-3">
       <label for="userPhone" class="font-weight-bold badge grey" style="font-size:1em;">연락처( '-' 제외, 9~11자리 숫자만입력)</label>
-      <input type="text" class="form-control" id="userPhone" name="userPhone" [(ngModel)]="loggedUser.uphone">
+      <input type="text" class="form-control" id="userTel" name="userTel" [(ngModel)]="loggedUser.userTel">
     </div>
     <div class="col-md-8 mb-3">
       <label for="userBirth" class="font-weight-bold badge grey" style="font-size:1em;">생년월일(주민등록번호 앞6자리만 입력)</label>
-      <input type="text" class="form-control" id="userBirth" name="userBirth" [(ngModel)]="loggedUser.ubirth">
+      <input type="date" class="form-control" id="userBirth" name="userBirth" [(ngModel)]="loggedUser.userBirth">
     </div>
 
    

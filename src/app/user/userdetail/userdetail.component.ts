@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import {  UserService } from "../user/user.service";
+import {  User } from "../user";
 
 declare var $: any;
 @Component({
@@ -10,7 +10,9 @@ declare var $: any;
   styleUrls: ['./userdetail.component.css']
 })
 export class UserdetailComponent implements OnInit {
-  loggedUser: UserService;
+  loggedUser: User;
+  authService: any;
+  
   constructor(private fb:FormBuilder, private router:Router) { 
 
   }
@@ -27,23 +29,23 @@ export class UserdetailComponent implements OnInit {
     let submitStatus:Boolean=false;
 
     if(
-      this.loggedUser.upw!=null &&
-      this.loggedUser.uNick!=null &&
-      this.loggedUser.uTel!=null 
+      this.loggedUser.userPwd!=null &&
+      this.loggedUser.userNick!=null &&
+      this.loggedUser.userTel!=null 
     ){
       let numpattern=/^[0-9]*$/;
 
-      if(this.loggedUser.upw.length>=20 || 7<this.loggedUser,upw.length){
+      if(this.loggedUser.userPwd.length>=20 || this.loggedUser,userPwd.length>=8){
         submitStatus=false;
         alert('비밀번호는 8자 이상 20 이하 입니다.');
         $("#userPwd").focus();
         return;
-      }if(this.loggedUser.uTel<=8 || this.loggedUser.uTel.length>=13){
+      }if(this.loggedUser.userTel>=12 || this.loggedUser.userTel.length>=13){
         submitStatus=false;
         alert('연락처는 9~12자 이내로 입력해주세요.');
         $("#userTel").focus();
         return;
-      }if(numpattern.test(this.loggedUser.uTel)==false){
+      }if(numpattern.test(this.loggedUser.userTel)==false){
         submitStatus=false;
         alert('연락처는 숫자만 입력 가능 합니다.');
         $("#userTel").focus();
@@ -53,7 +55,7 @@ export class UserdetailComponent implements OnInit {
       }
     }
     if(submitStatus){
-      this.userService.updateUser(this.loggedUser).subscribe(()=>{
+      this.loggedUser.updateUser(this.loggedUser).subscribe(()=>{
         this.authService.updateUserToken(this.loggedUser);
         alert("수정되었습니다.");
         this.router.navigate(["index"]);
