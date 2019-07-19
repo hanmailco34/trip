@@ -1,4 +1,7 @@
-
+.contents h2{
+    font-size: 30px;
+    color: black;
+}
 .videoTable{
 	margin-top: 50px;
 	font-size: 20px;

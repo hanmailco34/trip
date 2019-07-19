@@ -15,11 +15,17 @@ import { TipsWriteComponent } from './community/tips/tips-write/tips-write.compo
 import { ReviewWriteComponent } from './community/tour-review/review-write/review-write.component';
 import { TourPlanComponent } from './community/tour-plan/tour-plan.component';
 import { PlanWriteComponent } from './community/tour-plan/plan-write/plan-write.component';
+import { TestComponent } from './test/test.component';
+import { CompanyComponent } from './community/company/company.component';
+import { FindCompanyComponent } from './community/company/find-company/find-company.component';
 
 
 const routes: Routes = [
   {path:'login',
   component:LoginComponent
+},
+{path:'test',
+component:TestComponent
 },
 {
   path:'signup',
@@ -42,12 +48,20 @@ const routes: Routes = [
   component:TipsWriteComponent
 },
 {
-  path:'tourplan',
+  path:'tourPlan',
   component:TourPlanComponent
 },
 {
-  path:'planwrite',
+  path:'planWrite',
   component:PlanWriteComponent
+},
+{
+  path:'company',
+  component:CompanyComponent
+},
+{
+  path:'findCompany',
+  component:FindCompanyComponent
 },
 {
   path:'search',

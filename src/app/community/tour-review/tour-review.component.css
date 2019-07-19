@@ -1,3 +1,8 @@
+.contents h3{
+    font-size: 30px;
+    color: black;
+}
+
 .reviewTable{
     border-top: 1px solid rgb(194, 100, 38);
     border-collapse: collapse;

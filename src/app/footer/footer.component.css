@@ -1,0 +1,74 @@
+
+footer{
+    border-top: 1px soild #ddd;
+    float: center;
+}
+footer .foot_area{
+    position: relative;
+    padding-bottom: 40px;
+}
+
+footer .foot_area .foot_list{
+    padding-top: 25px;
+}
+
+footer .foot_area .foot_list li{
+    float: left;
+}
+
+footer .foot_area .foot_list li:first-child::after{
+    content: "|"; display: inline-block;
+    padding:0 10px;
+    font-size: 10px;
+    color: #000;
+    position: relative;
+    top: -2px;
+}
+
+footer .foot_area .foot_list li a{
+    padding-top: 25px;
+    font-weight: bold;
+    font-size: 15px;
+    color: darkcyan;
+}
+
+footer .foot_area h2{
+    padding-top: 25px;
+    margin-left: 30%;
+    font-size: 20px;
+    color: rgb(67, 65, 73);
+}
+
+footer .foot_area .addr{
+    padding-top: 5px;
+    line-height: 1.4;
+    font-size: 13px;
+    color: #666;
+}
+footer .foot_area .addr .space0{
+    letter-spacing: 0;
+}
+
+footer .foot_area .copy{
+    padding-top: 3px;
+    font-size: 13px;
+    color: #666;
+    letter-spacing: 0;
+}
+
+/* footer .foot_area .snslink{
+    position: absolute;
+    right: 20px;
+    top: 50px;
+}
+
+footer .foot_area .snslink li{
+    float: left;
+    margin-left: 60px;
+}
+footer .foot_area .snslink li a{
+    display: block;
+    width: 50px;
+    height: 74px;
+    text-indent: -9999px;
+} */

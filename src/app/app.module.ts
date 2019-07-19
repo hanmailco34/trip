@@ -22,6 +22,10 @@ import { ReviewWriteComponent } from './community/tour-review/review-write/revie
 import { MenuComponent } from './menu/menu.component';
 import { TourPlanComponent } from './community/tour-plan/tour-plan.component';
 import { PlanWriteComponent } from './community/tour-plan/plan-write/plan-write.component';
+import { TestComponent } from './test/test.component';
+import { CompanyComponent } from './community/company/company.component';
+import { FindCompanyComponent } from './community/company/find-company/find-company.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -42,7 +46,11 @@ import { PlanWriteComponent } from './community/tour-plan/plan-write/plan-write.
     ReviewWriteComponent,
     MenuComponent,
     TourPlanComponent,
-    PlanWriteComponent 
+    PlanWriteComponent,
+    TestComponent,
+    CompanyComponent,
+    FindCompanyComponent,
+    FooterComponent 
   ],
   imports: [
     BrowserModule,

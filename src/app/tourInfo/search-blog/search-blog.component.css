@@ -1,3 +1,7 @@
+.contents h2{
+    font-size: 30px;
+    color: black;
+}
 .searchResult{
     border-top: 1px solid red;
     border-collapse: collapse;
