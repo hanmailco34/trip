@@ -1,0 +1,23 @@
+<div id="subWrap">
+        <div class="lnb" >
+           <h1 class="bigTitle">
+             <a href="/hotel">호텔</a>
+           </h1>
+           <ul>
+             <li  class="allNotice on"><a href="/hotel">추천 숙박</a></li>
+           </ul>
+   
+     
+         </div>    
+         <!-- //lnb -->
+         <div class="contents">
+           <h2>Hotel 검색</h2>
+           <hr class="one">
+           <br>
+                   검색어 : <input type="text" [(ngModel)]="searchWord" style="width:250px; height:30px ;">&nbsp;
+               <button (click)="search()" style="height:30px ;" class="btn btn-outline-secondary">검색</button><br>
+               체크인 : <input type="date">&nbsp;
+               체크아웃 : <input type="date">
+         </div>
+       </div>
+   

@@ -1,0 +1,59 @@
+#container{
+    margin-top: 20px;
+}
+#cnt{
+    text-align: right;
+    font-size: 15px;
+}
+div div{
+    border-radius: 10px;
+    height: auto;
+}
+
+
+.replys{
+    border: 1px solid  rgb(216, 216, 216);
+    background:rgb(250, 250, 250);
+}
+#title{
+    border-bottom: 1px dashed rgb(216, 216, 216);
+}
+#modify{
+    text-align: right;
+}
+#like{
+    text-align: center;
+}
+#writer{
+    font-family: initial;
+    font-size: 12px;
+}
+.contents{
+    border-right-width: thick;
+    color: black;
+}
+table{
+    margin-top: 20px;
+    width: 720px;
+    border-top: 1px solid  rgb(216, 216, 216);
+    border-collapse: collapse;
+    border-spacing: 25px;
+    font-size:15px;
+    border-bottom: 1px solid  rgb(216, 216, 216);
+    margin-bottom: 100px;
+  
+}
+tr th{
+    width: 720px;
+    padding:10px;
+    height: 50px;
+}
+
+tr td{
+    height: 50px;
+    padding: 20px;
+}
+div tr td{
+    padding-bottom: 20px;
+    padding: 5px;
+}

@@ -1,0 +1,122 @@
+<div id="subWrap">
+  <div id="container">
+      <div class="lnb" >
+        <h1 class="bigTitle">
+          <a href="/noticeboard">공지사항</a>
+        </h1>
+        <ul>
+          <li  class="allNotice on"><a href="#">내 작성글 보기</a></li>
+          <li  class=""><a href="#">회원 정보 수정</a></li>
+
+        </ul>
+
+  
+      </div>
+  </div>
+      <!-- //lnb -->
+      <div class="contents">
+        <h5>여행후기</h5>
+		        <table class="reviewTable">
+              <colgroup>
+                <col style="width:10%">
+                <col style="width:25%">
+                <col style="width:20%">
+                <col style="width:10%">
+                <col style="width:7%">
+              </colgroup>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">작성자</th>
+                <th scope="col">작성일</th>
+                <th scope="col">조회수</th>
+              </tr>
+              <tr>
+                <td>테스트</td>
+                <td>테스트테스트테테테스트</td>
+                <td>테스트</td>
+                <td>테스트</td>
+                <td>테스트</td>
+              </tr>
+              
+            </table>
+       
+          <h5>여행계획</h5>
+          <table class="planTable">
+            <colgroup>
+              <col style="width:10%">
+              <col style="width:25%">
+              <col style="width:20%">
+              <col style="width:10%">
+              <col style="width:7%">
+            </colgroup>
+            <tr>
+              <th scope="col">번호</th>
+              <th scope="col">제목</th>
+              <th scope="col">여행도시</th>
+              <th scope="col">작성일</th>
+              <th scope="col">조회수</th>
+            </tr>
+            <tr *ngFor="let pl of plan">
+              <td>{{pl.planNum}}</td>
+              <td>{{pl.planTitle}}</td>
+              <td>{{pl.planPlace}}</td>
+              <td>{{pl.planDate}}</td>
+              <td>테스트</td>
+            </tr>
+            
+          </table>
+     
+        <h5>동행인 구하기</h5>
+        <table class="withTable">
+          <colgroup>
+            <col style="width:10%">
+            <col style="width:25%">
+            <col style="width:20%">
+            <col style="width:10%">
+            <col style="width:7%">
+          </colgroup>
+          <tr>
+            <th scope="col">번호</th>
+            <th scope="col">제목</th>
+            <th scope="col">내용</th>
+            <th scope="col">작성일</th>
+            <th scope="col">조회수</th>
+          </tr>
+          <tr *ngFor="let wi of with">
+            <td>{{wi.withNum}}</td>
+            <td>{{wi.withTitle}}</td>
+            <td>{{wi.withContent}}</td>
+            <td>{{wi.withDate}}</td>
+            <td>{{wi.withCnt}}</td>
+          </tr>
+          
+        </table>
+    
+        <h5>여행 Tip</h5>
+      <table class="tipTable">
+        <colgroup>
+          <col style="width:10%">
+          <col style="width:25%">
+          <col style="width:20%">
+          <col style="width:10%">
+          <col style="width:7%">
+        </colgroup>
+        <tr>
+          <th scope="col">번호</th>
+          <th scope="col">제목</th>
+          <th scope="col">내용</th>
+          <th scope="col">작성일</th>
+          <th scope="col">조회수</th>
+        </tr>
+        <tr *ngFor="let ti of tip">
+          <td>{{ti.tipNum}}</td>
+          <td>{{ti.tipTitle}}</td>
+          <td>{{ti.tipContent}}</td>
+          <td>{{ti.tipDate}}</td>
+          <td>{{ti.tipNum}}</td>
+        </tr>
+        
+      </table>
+  </div>
+</div>

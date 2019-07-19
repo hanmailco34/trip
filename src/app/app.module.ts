@@ -26,6 +26,8 @@ import { TestComponent } from './test/test.component';
 import { CompanyComponent } from './community/company/company.component';
 import { FindCompanyComponent } from './community/company/find-company/find-company.component';
 import { FooterComponent } from './footer/footer.component';
+import { MypageComponent } from './user/mypage/mypage.component';
+import { DetailCompanyComponent } from './community/company/detail-company/detail-company.component';
 
 
 @NgModule({
@@ -50,7 +52,9 @@ import { FooterComponent } from './footer/footer.component';
     TestComponent,
     CompanyComponent,
     FindCompanyComponent,
-    FooterComponent 
+    FooterComponent,
+    MypageComponent,
+    DetailCompanyComponent
   ],
   imports: [
     BrowserModule,

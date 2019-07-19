@@ -1,0 +1,30 @@
+#container{
+    margin-top: 20px;
+}
+
+.contents{
+    border-right-width: thick;
+    color: black;
+}
+table{
+    border-top: 1px solid rgb(1, 143, 20);
+    border-collapse: collapse;
+    border-spacing: 25px;
+    font-size:15px;
+    border-bottom: 1px solid rgb(1, 143, 20);
+    margin-bottom: 100px;
+}
+th{
+    padding:10px;
+    height: 50px;
+}
+
+tr td{
+    height: 50px;
+    padding: 10px;
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+btn{
+    text-align: right;
+}

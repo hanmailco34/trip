@@ -9,6 +9,7 @@ export class User {
 	public  userPic:string;
 	public userFile:File;
     public  userNick:string;
-    public userPwdChk:string
+	public userPwdChk:string
+	public userNum:string;
 
 }

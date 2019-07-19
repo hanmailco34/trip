@@ -18,6 +18,8 @@ import { PlanWriteComponent } from './community/tour-plan/plan-write/plan-write.
 import { TestComponent } from './test/test.component';
 import { CompanyComponent } from './community/company/company.component';
 import { FindCompanyComponent } from './community/company/find-company/find-company.component';
+import { MypageComponent } from './user/mypage/mypage.component';
+import { DetailCompanyComponent } from './community/company/detail-company/detail-company.component';
 
 
 const routes: Routes = [
@@ -62,6 +64,14 @@ component:TestComponent
 {
   path:'findCompany',
   component:FindCompanyComponent
+},
+{
+  path:'mypage',
+  component:MypageComponent
+},
+{
+  path:'company/detail',
+  component:DetailCompanyComponent
 },
 {
   path:'search',

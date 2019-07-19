@@ -1,0 +1,58 @@
+<div id="subWrap">
+  <div class="lnb">
+  <h1 class="bigTitle">
+      <a href="/review">커뮤니티</a>
+  </h1>
+  <ul>
+      <li><a href="/review">여행 후기</a></li>
+      <li><a href="/tourplan">여행 계획</a></li>
+      <li  class="allNotice on"><a href="/company">동행인 구하기</a></li>
+      <li><a href="/tips">여행 Tip</a></li>
+  </ul>
+
+
+
+  </div>
+ 
+  <!-- //lnb -->
+  <div class="contents">
+    <h2>동행인 구하기</h2>
+    <br>
+        <table class="companyTable" >
+         <tr id="title">
+            <th>{{with.withTitle}}<div id="modify"><a>수정</a>&nbsp;<a>삭제</a></div></th>
+          </tr>
+          <div id="cnt">조회수 : {{with.withCnt}}</div>
+          <tr>
+           <th id="writer">{{with.withWriter}}</th>
+          </tr>
+           <tr>
+            <td id="withContent">
+              {{with.withContent}}
+            </td>
+          </tr>
+
+         <div id="like">
+            <a><img src="../../../../assets/imgs/like.png" width="50px"></a>좋아요:
+          </div>
+          <br><br><br>
+          &nbsp;댓글
+          <br>
+          <div *ngFor="let re of replys" class="replys">
+            
+           <tr>
+            <td>&nbsp;홍길동</td><td style="width: 600px; text-align: right; font-size: 10px;">{{re.reDate}}</td>
+           </tr>
+            <br>
+            <tr>&nbsp;&nbsp;{{re.reContent}}</tr>
+          </div>
+          <br>
+          <textarea style="width:620px; height: 50px;" [(ngModel)]="reply.reContent"></textarea><button type="button" class="btn btn-outline-secondary" style="width:100px;height: 50px;" (click)="replyWrite()">댓글쓰기</button>
+          
+        </table>
+        <br>
+  
+        </div>
+  </div>
+
+
