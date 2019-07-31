@@ -1,0 +1,94 @@
+<div id="subWrap">
+  <div class="lnb">
+    <h1 class="bigTitle">
+      <a href="/review">커뮤니티</a>
+    </h1>
+    <ul>
+      <li class="allNotice on"><a href="/review">여행 후기</a></li>
+      <li><a href="/tourPlan">여행 계획</a></li>
+      <li><a href="/company">동행인 구하기</a></li>
+      <li><a href="/tips">여행 Tip</a></li>
+    </ul>
+
+
+
+  </div>
+
+  <!-- //lnb -->
+  <div class="contents">
+    <h2>여행후기</h2>
+    <br>
+    <table class="reviewTable">
+      <tr id="title">
+        <th>{{reviews.rvTitle}}
+            <div id="modify" *ngIf="userNum==true">
+                <a href="/editReview/{{rvNum}}">수정</a>&nbsp;
+                <a [routerLink]='' (click)="delRev()">삭제</a>
+              </div>
+        </th>
+      </tr>
+      <tr>
+        <th id="writer">&nbsp;{{userName}}</th>        
+      </tr>
+      <div id="cnt">조회수 : {{reviews.rvCnt}}</div>
+      <tr>
+        <td id="reviewContent" style="max-width: 500px;">       
+        </td>
+      </tr>
+      <div id="like">
+        <a [routerLink]="" (click)="likeUp()"><img src="../../../../assets/imgs/like.png" width="50px"></a>좋아요:{{reviews.rvLike}}
+      </div>
+    </table>
+      <br>
+
+      <table class="tReply">
+        <tr>
+          <th style="font-size:25px; color:black;">댓글</th>
+        </tr>
+        <br>
+      <div *ngFor="let re of replys" class="replys">
+        <tr>
+          <td><b>{{re.userName}}</b></td>
+        </tr>
+        <div id="reContent">
+          <tr>
+            <td>{{re.reContent}}</td>
+          </tr>
+        </div>
+        <br>
+        <tr></tr>
+      </div>
+      <br>
+    </table>
+      <!--댓글 작성-->
+      <div id="wReply">
+        <legend>댓글 쓰기</legend>
+        <span class="round">
+          <textarea [(ngModel)]="reply.reContent"></textarea>&nbsp;
+          <button type="button" class="btn btn-outline-secondary" (click)="replyWrite()">저장</button>
+        </span>
+      </div>
+      <br>
+      <fieldset class="rating"><legend>평가하기 </legend>
+          <input type="radio" [name]="inputName" value="5" [checked]="rating===5" />
+          <label title="Rocks!" (click)='evalRating(5)'>5 stars</label>
+        
+          <input type="radio" [name]="inputName" value="4" [checked]="rating===4" selected/>
+          <label title="Pretty good" (click)='evalRating(4)'>4 stars</label>
+        
+          <input type="radio" [name]="inputName" value="3" [checked]="rating===3" />
+          <label title="Meh" (click)='evalRating(3)'>3 stars</label>
+        
+          <input type="radio" [name]="inputName" value="2" [checked]="rating===2" />
+          <label title="Kinda bad" (click)='evalRating(2)'>2 stars</label>
+        
+          <input type="radio" [name]="inputName" value="1" [checked]="rating===1" />
+          <label title="Sucks big time" (click)='evalRating(1)'>1 star</label>
+        </fieldset>
+        
+        
+
+    <br>
+
+  </div>
+</div>

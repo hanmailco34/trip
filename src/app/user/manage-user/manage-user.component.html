@@ -1,0 +1,46 @@
+<div id="subWrap">
+  <div class="lnb">
+  <h1 class="bigTitle">
+      관리자페이지
+  </h1>
+  <ul>
+      <li><a href="/manageUser">유저관리</a></li>
+      <li><a href="/userdetail">관리자 정보 수정</a></li>
+  </ul>
+
+
+
+  </div>
+ 
+  <!-- //lnb -->
+  <div class="contents">
+    <h2>유저 관리</h2>
+    <br>
+        <table class="companyTable">
+          <colgroup>
+            <col style="width:10%">
+            <col style="width:25%">
+            <col style="width:20%">
+            <col style="width:10%">
+            <col style="width:7%">
+          </colgroup>
+          <tr>
+            <th scope="col">유저번호</th>
+            <th scope="col">유저아이디</th>
+            <th scope="col">유저닉네임</th>
+            <th scope="col">유저성별</th>
+            <th scope="col">삭제</th>
+          </tr>
+          <tr *ngFor="let us of user">
+            <td>{{us.userNum}}</td>
+            <td>{{us.userId}}</td>
+            <td>{{us.userNick}}</td>
+            <td>{{us.userGender}}</td>
+            <td><button (click)="deleteUser(us)">삭제</button></td>
+          </tr>
+          
+        </table>
+        </div>
+  </div>
+
+

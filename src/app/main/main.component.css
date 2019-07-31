@@ -17,7 +17,21 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/WONDotum.woff') format('woff'); 
     font-weight: normal; 
     font-style: normal; 
-}
+} 
+
+@font-face { 
+    font-family: 'LeeHyunJi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/LeeHyunJi.woff') format('woff'); 
+    font-weight: normal; 
+    font-style: normal;
+ }
+
+ @font-face { 
+     font-family: 'silgothic'; 
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/silgothic.woff') format('woff'); 
+     font-weight: normal; 
+     font-style: normal; 
+    }
 
 #carouselExampleIndicators{
     padding-top: 20px; 
@@ -102,6 +116,10 @@
     top: -20px;
     color: #000;
 }
+.popup_base .btn_xpop #cBtn{
+    font-size: 25px;
+    
+}
 
 .popup_base .btn_xpop a{
     display: block;
@@ -156,3 +174,33 @@
     font-family: 'WONDotum';
 }
 
+#mTitle {
+    font-family: 'KOMACON';
+}
+
+#intro{
+    font-family: 'LeeHyunJi';
+    font-size: 40px;
+    font-weight: bold;
+}
+#intro2{
+    font-family: 'KOMACON';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#introText{
+    font-family: 'silgothic';
+    font-size: 20px;
+}
+
+#primaryTitle{
+    font-family: 'KOMACON';
+    font-size: 20px;
+    font-weight: bold;  
+}
+
+.primaryF ul li span{
+    font-family: 'silgothic';
+    font-size: 50px;
+}

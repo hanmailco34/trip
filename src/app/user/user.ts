@@ -1,5 +1,6 @@
 export class User {
 
+	public userNum:number;
 	public userId:string;
 	public  userPwd:string;
 	public  userTel:string;
@@ -10,6 +11,9 @@ export class User {
 	public userFile:File;
     public  userNick:string;
 	public userPwdChk:string
-	public userNum:string;
-
+	public naverId:string;
+	public naverEmail:string;
+	public googleId:string;
+	public googleEmail:string;
+	public userLevel:string;
 }

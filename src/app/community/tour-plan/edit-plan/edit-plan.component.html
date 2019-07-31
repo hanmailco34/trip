@@ -1,0 +1,71 @@
+<div id="subWrap">
+    <div class="lnb" >
+   <h1 class="bigTitle">
+     <a href="/review">커뮤니티</a>
+   </h1>
+   <ul>
+     <li><a href="/review">여행 후기</a></li>
+     <li class="allNotice on"><a href="/tourPlan">여행 계획</a></li>
+     <li><a href="/company">동행인 구하기</a></li>
+     <li><a href="/tips">여행 Tip</a></li>
+   </ul>
+
+
+ </div>
+ <!-- //lnb -->
+
+ <!-- contents -->
+ <div class="contents">
+   <h2 class="titleSt02">여행 계획</h2>
+   <div class="mb-3">
+       <label for="title">제목</label>
+       <input type="text" class="form-control" placeholder="제목을 입력해 주세요" [(ngModel)]="plan.planTitle">
+   </div>
+   <div class="mb-3">
+       <label for="reg_id">작성자</label>
+       <input type="text" class="form-control" placeholder="이름을 입력해 주세요"  disabled [(ngModel)]="userName">
+   </div>
+   <div class="mb-3"> 
+       <label for="content">내용</label>
+       <ckeditor
+       [(data)]="editorValue"
+       [config]="ckEditorConfig"
+   ></ckeditor>
+   </div>
+   <div class="mb-3">
+      <label for="reg_place">*계획나라</label>
+      <input type="text" class="form-control" placeholder="나라를 입력해 주세요"  [(ngModel)]="plan.planPlace">
+  </div>
+   <div class="mb-3">
+      <label for="reg_place">*계획도시</label>
+      <input type="text" class="form-control" placeholder="도시를 입력해 주세요"  [(ngModel)]="plan.planCity">
+  </div>
+   <div class="mb-3">
+      <label for="reg_sch"><b>*스케쥴</b></label><br>
+      출발일<input type="date" class="form-control"  [(ngModel)]="plan.planSch">
+      귀국일<input type="date" class="form-control"  [(ngModel)]="plan.planSch2">
+  </div>
+  <div class="mb-3">
+      <label for="reg_place">*이동수단</label>
+      <input type="text" class="form-control" placeholder="이동수단을 주세요"  [(ngModel)]="plan.planTrans">
+  </div>
+
+      <label for="reg_place">*여행테마</label><br>
+    <div class="mb-3" id="tema">
+      <input type="radio" name="tema" value="1"  [(ngModel)]="plan.planTema"/>남자혼자
+      <input type="radio" name="tema" value="2"  [(ngModel)]="plan.planTema"/>여자혼자
+      <input type="radio" name="tema" value="3"  [(ngModel)]="plan.planTema"/>남자끼리
+      <input type="radio" name="tema" value="4"  [(ngModel)]="plan.planTema"/>여자끼리 
+      <input type="radio" name="tema" value="5"  [(ngModel)]="plan.planTema"/>커플 
+      <input type="radio" name="tema" value="6"  [(ngModel)]="plan.planTema"/>남녀그룹
+      <input type="radio" name="tema" value="7"  [(ngModel)]="plan.planTema"/>부모님과
+    </div>
+  <br>
+   <div class="col text-right">
+     <button type="button" class="btn btn-outline-danger" id="btnSave" (click)="modPlan()">저장</button>&nbsp;&nbsp;
+     <button type="button" class="btn btn-outline-danger" id="btnList">목록</button>
+ </div>
+ </div>
+</div>
+
+

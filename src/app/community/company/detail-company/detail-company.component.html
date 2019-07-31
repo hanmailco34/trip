@@ -14,45 +14,73 @@
 
   </div>
  
-  <!-- //lnb -->
-  <div class="contents">
+   <!-- //lnb -->
+   <div class="contents">
     <h2>동행인 구하기</h2>
     <br>
+    <!--게시글 화면-->
         <table class="companyTable" >
-         <tr id="title">
-            <th>{{with.withTitle}}<div id="modify"><a>수정</a>&nbsp;<a>삭제</a></div></th>
+         <tr id="comapnyTitle">
+            <th>{{with.withTitle}}
+                <div id="cnt">조회수 : {{with.withCnt}}</div>
+              <div id="modify" *ngIf="userNum==true">
+                  <a href="/editCompany/{{companyNum}}">수정</a>&nbsp;
+                  <a [routerLink]='' (click)="delCompany()">삭제</a>              
+              </div>
+            </th>
           </tr>
-          <div id="cnt">조회수 : {{with.withCnt}}</div>
-          <tr>
+        <tr>
+          <th id="writer">{{userName}}</th>
+        </tr>
+        
+        <tr>
            <th id="writer">{{with.withWriter}}</th>
-          </tr>
+        </tr>
            <tr>
             <td id="withContent">
               {{with.withContent}}
             </td>
           </tr>
-
-         <div id="like">
-            <a><img src="../../../../assets/imgs/like.png" width="50px"></a>좋아요:
-          </div>
-          <br><br><br>
-          &nbsp;댓글
-          <br>
-          <div *ngFor="let re of replys" class="replys">
-            
-           <tr>
-            <td>&nbsp;홍길동</td><td style="width: 600px; text-align: right; font-size: 10px;">{{re.reDate}}</td>
-           </tr>
-            <br>
-            <tr>&nbsp;&nbsp;{{re.reContent}}</tr>
-          </div>
-          <br>
-          <textarea style="width:620px; height: 50px;" [(ngModel)]="reply.reContent"></textarea><button type="button" class="btn btn-outline-secondary" style="width:100px;height: 50px;" (click)="replyWrite()">댓글쓰기</button>
           
+          <br> <br>
         </table>
+
+         <!-- <div id="companyLike">
+            <a><img src="../../../../assets/imgs/like.png" width="50px"></a>좋아요:
+          </div> -->
+          <!--댓글 화면-->
+          
+          <br>
+          <table class="tReply">
+            <tr>
+                <th style="font-size:20px; color:black;">댓글</th>
+            </tr>
+            <br>
+            <div *ngFor="let re of replys" class="replys">
+                <tr>
+                  <td><b>{{re.userName}}</b>   &nbsp;&nbsp; {{re.reDate}}</td>
+                </tr>
+                <div id="reContent">
+                <tr>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{re.reContent}}</td>
+                </tr>
+              </div>
+              
+              <br>
+            </div>
+        
+            </table>
+              <br>
+              <!--댓글 작성-->
+              <div id="wReply">
+                <legend style="color:black;">댓글 쓰기</legend>
+                <span class="round">
+                  <textarea [(ngModel)]="reply.reContent"></textarea>&nbsp;
+                  <button type="button" class="btn btn-outline-secondary" (click)="replyWrite()">저장</button>
+                </span>
+              </div>    
         <br>
   
         </div>
   </div>
-
 

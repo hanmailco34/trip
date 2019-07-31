@@ -26,22 +26,22 @@
               <tr>
                 <th scope="col">번호</th>
                 <th scope="col">제목</th>
-                <th scope="col">작성자</th>
+                <th scope="col">내용</th>
                 <th scope="col">작성일</th>
                 <th scope="col">조회수</th>
               </tr>
-              <tr>
-                <td>테스트</td>
-                <td>테스트테스트테테테스트</td>
-                <td>테스트</td>
-                <td>테스트</td>
-                <td>테스트</td>
+              <tr *ngFor="let nt of noticeList">
+                <td >{{nt.nbNum}}</td>
+                <td (click)="detail(nt.nbNum)" data-toggle="modal" data-target="#noticeM">{{nt.nbTitle}}</td>
+                <td>{{nt.nbContent}}</td>
+                <td>{{nt.nbDate}}</td>
+                <td>{{nt.nbCount}}</td>
               </tr>
               
             </table>
 
             <!--Modal button -->
-            <div class="col text-right">
+            <div class="col text-right" *ngIf="userLevel">
               <button type="button" class="btn btn-outline-secondary mt-3" data-toggle="modal" data-target="#noticeModal" (click)="showModal()">
                 글쓰기
               </button>
@@ -63,9 +63,9 @@
         <!-- Modal body -->
         <div class="modal-body mb-3">
           <label>제목</label>
-          <input type="text" name="lectureName" class="form-control mt-2 mb-3" maxlength="20">
+          <input type="text" name="lectureName" class="form-control mt-2 mb-3" maxlength="20" [(ngModel)]="notice['nbTitle']">
           <label>내용</label>
-          <textarea name="evaluationContent" class="form-control mt-2" maxlength="2048" style="height:300px;"></textarea>	
+          <textarea name="evaluationContent" class="form-control mt-2" maxlength="2048" style="height:300px;" [(ngModel)]="notice.nbContent"></textarea>	
         </div>
   
         <!-- Modal footer -->
@@ -78,6 +78,32 @@
         </div>
       </div>
     </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="noticeM">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">공지사항 작성</h4>
+        <button type="button" class="close" (click)="hideModal()">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body mb-3">
+        <label>제목</label>
+        <input type="text" name="lectureName" class="form-control mt-2 mb-3" maxlength="20" [(ngModel)]="notice['nbTitle']" disabled>
+        <label>내용</label>
+        <textarea name="evaluationContent" class="form-control mt-2" maxlength="2048" style="height:300px;" [(ngModel)]="notice.nbContent" disabled></textarea>	
+      </div>
+
+        <!-- this button is hidden, used to close from typescript -->
+        <button type="button" id="close-modal" data-dismiss="modal" style="display: none">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
   

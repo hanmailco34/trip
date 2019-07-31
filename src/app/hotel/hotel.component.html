@@ -1,3 +1,4 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 <div id="subWrap">
         <div class="lnb" >
            <h1 class="bigTitle">
@@ -14,10 +15,59 @@
            <h2>Hotel 검색</h2>
            <hr class="one">
            <br>
-                   검색어 : <input type="text" [(ngModel)]="searchWord" style="width:250px; height:30px ;">&nbsp;
-               <button (click)="search()" style="height:30px ;" class="btn btn-outline-secondary">검색</button><br>
-               체크인 : <input type="date">&nbsp;
-               체크아웃 : <input type="date">
-         </div>
+                   호텔검색 : <input type="text" [(ngModel)]="searchWord" style="width:250px; height:30px ;">&nbsp;
+               <button (click)="search()" style="height:30px ;" class="btn btn-secondary">검색</button><br>
+               
+         <!-- //lnb -->
+        <div *ngIf="hotels.length>0">
+        <h2>호텔정보</h2>
+        <br>
+        <div class="col text-right">  
+          <select (click)="searchPrice()" [(ngModel)]="sort" class="btn btn-outline-secondary">
+            <option value="row">낮은 가격순</option>
+            <option value="high">높은 가격순</option>
+          </select>        
+        </div>
+            <div>     
+		        <table class="hotelTable">
+              <colgroup>
+                <col style="width:10%">
+                <col style="width:25%">
+                <col style="width:20%">
+                <col style="width:10%">
+              </colgroup>
+              <tr>
+                <th scope="col">사진</th>
+                <th scope="col">호텔이름</th>
+                <th scope="col">호텔주소</th>
+                <th scope="col">가격</th>
+              </tr>
+              <tr *ngFor="let hotel of pagedItems">
+                <td><img src="http://localhost:88{{hotel.hotelPic}}"></td>
+                <td>{{hotel.hotelName}}</td>
+                <td>{{hotel.hotelAddr}}</td>
+                <td>{{hotel.hotelPrice}}</td>
+              </tr>              
+            </table>
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(1)">First</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+                </li>
+                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                    <a (click)="setPage(page)">{{page}}</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.totalPages)">Last</a>
+                </li>
+            </ul>
+          </div>
+        </div>           
+            </div>        
        </div>
    

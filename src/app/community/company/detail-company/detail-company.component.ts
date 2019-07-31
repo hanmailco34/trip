@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommunityService } from '../../community.service';
 import { Reply } from '../../reply';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detail-company',
@@ -11,15 +12,27 @@ export class DetailCompanyComponent implements OnInit {
   with:[] = [];
   replys:[] = [];
   reply:Reply = new Reply();
-  constructor(private _cs:CommunityService) { }
+  userNum:any;
+  companyNum:string;
+  userName:string;
+  constructor(private _cs:CommunityService, private _router:ActivatedRoute) {
+    }
 
   ngOnInit() {
-    var companyNum='1'; //companyNum을 어떻게 줄것인가 우리가 같이 고민해야할 문제다...
-    this._cs.getCompanyByNum(companyNum).subscribe(res=>{ //CompanyNum으로 게시글 찾는 메소드.
+    this.companyNum = this._router.snapshot.paramMap.get('withNum');
+
+    this._cs.getCompanyByNum(this.companyNum).subscribe(res=>{
        for(let re in res){
        this.with[re] = res[re];
      }
-     this.reply.withNum = this.with['withNum']; //동행인 페이지에서 리플쓰는 거니깐 위드넘만 넣어주는 거임.
+     if(localStorage.getItem('userNum') == this.with['userNum']){
+      this.userNum = true;
+    }
+    this._cs.getUserbyUserNum(this.with['userNum']).subscribe(res=>{
+       
+      this.userName = res['userNick'];
+     })
+     this.reply.withNum = this.with['withNum']; 
      this.getReply();
     });
     }
@@ -28,20 +41,33 @@ export class DetailCompanyComponent implements OnInit {
     this._cs.getReply(this.reply).subscribe(res=>{
       for(let re in res){
         this.replys[re] = res[re];
+        this._cs.getUserbyUserNum(this.replys[re].userNum).subscribe(res=>{
+          this.replys[re].userName = res['userNick'];
+          console.log(this.replys[re].userName);
+         })
       }
     })
     
    }
 
    replyWrite(){
-     this.reply.userNum = '15'; //나중에는 localstorage.getUserId로 대입해줄 것.
+     this.reply.userNum = localStorage.getItem('userNum');
      this._cs.writeReply(this.reply).subscribe(res=>{
       console.log(res);
       if(res==1){
         alert('댓글이 성공적으로 작성되었습니다.');
-        //location.href="" 여기에 이제 해당 글을 다시 볼 수 있는 소스가 필요.
+        location.href="/company/"+this.companyNum; 
       }
     });
    }
-
+   delCompany(){
+    this._cs.delCompany(this.companyNum).subscribe(res=>{
+      if(res==1){
+        alert('삭제에 성공하셨습니다.');
+        location.href="/company";
+      }
+    }, err=>{
+      alert('삭제에 실패했습니다.');
+    })
+  }
 }

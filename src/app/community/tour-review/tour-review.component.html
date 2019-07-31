@@ -21,26 +21,48 @@
                 <col style="width:25%">
                 <col style="width:20%">
                 <col style="width:10%">
+                <col style="width:10%">
                 <col style="width:7%">
               </colgroup>
               <tr>
                 <th scope="col">번호</th>
                 <th scope="col">제목</th>
-                <th scope="col">작성자</th>
+                <th scope="col" >평점</th>
+                <th scope="col">여행비용</th>
                 <th scope="col">작성일</th>
-                <th scope="col">조회수</th>
+               <th scope="col">조회수</th>
               </tr>
-              <tr>
-                <td>테스트</td>
-                <td>테스트테스트테테테스트</td>
-                <td>테스트</td>
-                <td>테스트</td>
-                <td>테스트</td>
+              <tr *ngFor="let review of reviews">
+                <td>{{review.rvNum}}</td>
+                <td><a href="/review/{{review.rvNum}}">{{review.rvTitle}}</a></td>
+                <td>
+                    <fieldset class="rating">
+                      <input type="radio"  value="5" [checked]="review.rvSp==5" readonly/>
+                      <label title="Rocks!">5 stars</label>
+                    
+                      <input type="radio" value="4"  [checked]="review.rvSp==4" readonly/>
+                      <label title="Pretty good" >4 stars</label>
+                    
+                      <input type="radio" value="3"  [checked]="review.rvSp==3" readonly/>
+                      <label title="Meh" >3 stars</label>
+                    
+                      <input type="radio"  value="2" [checked]="review.rvSp==2" readonly/>
+                      <label title="Kinda bad">2 stars</label>
+                    
+                      <input type="radio" value="1" [checked]="review.rvSp==1" readonly/>
+                      <label title="Sucks big time">1 star</label>
+                    </fieldset>
+                </td>
+                <td>{{review.rvCost}}</td><!--리뷰테이블에도 작성자컬럼이 업고 유저넘만 있다..-->
+                
+                <td>{{review.rvDate}}</td>
+               
+                <td>{{review.rvCnt}}</td>
               </tr>
               
             </table>
             <br>     
-            <div class="col text-right">
+            <div class="col text-right" *ngIf="userNum">
             <button type="button" class="btn btn-outline-danger" onclick="location.href='/reviewWrite'">글쓰기</button>
           </div>
             </div>

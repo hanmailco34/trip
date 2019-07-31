@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
+import { CommunityService } from '../community.service';
 
 @Component({
   selector: 'app-tour-plan',
@@ -8,16 +7,21 @@ import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
   styleUrls: ['./tour-plan.component.css']
 })
 export class TourPlanComponent implements OnInit {
-  public Editor = ClassicEditor;
-
-  public onChange( { editor }: ChangeEvent ) {
-      const data = editor.getData();
-
-      console.log( data );
-  }
-  constructor() { }
+  
+  plans: [] = [];
+  userNum:string;
+  constructor(private _cs: CommunityService) {this.userNum = localStorage.getItem('userNum'); }
+  editorValue:string = '';
 
   ngOnInit() {
+    this._cs.getPlanList().subscribe(res => {
+      for (var re in res) {
+        this.plans[re] = res[re];
+      }
+    })
   }
 
+ 
 }
+
+

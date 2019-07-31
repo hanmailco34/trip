@@ -1,0 +1,96 @@
+#container{
+    margin-top: 20px;
+}
+#cnt{
+    text-align: right;
+    font-size: 15px;
+}
+div div{
+    border-radius: 10px;
+    height: auto;
+}
+
+#title{
+    border-bottom: 2px dashed rgb(238, 152, 152);
+}
+#modify{
+    text-align: right;
+}
+#like{
+    text-align: center;
+}
+#writer{
+    font-family: initial;
+    font-size: 12px;
+}
+.contents h2{
+    border-right-width: thick;
+    color: black;
+}
+
+
+.tipTable{
+    margin-top: 15px;
+    width: 720px;
+    border-top: 1px solid  rgb(216, 216, 216);
+    border-collapse: collapse;
+    border-spacing: 25px;
+    font-size:15px;
+    border-bottom: 1px solid  rgb(216, 216, 216);
+    margin-bottom: 100px;
+  
+}
+.tipTable tr th{
+    width: 720px;
+    padding:10px;
+    height: 50px;
+}
+
+.tipTable tr td{
+    padding: 30px;
+    padding-bottom: 200px;
+}
+.tipTable #title{
+    color: black;
+    font-size: 20px;
+}
+
+.tipTable #writer{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.tipTable #tipsContent{
+    font-size: 25px;
+}
+
+/* div tr td{
+    padding-bottom: 20px;
+    padding: 5px;
+} */
+
+#wReply{
+ margin-top: 5%; 
+}
+
+#wReply textarea{
+    width:620px; 
+    height: 50px;
+    resize: none;
+}
+
+#wReply button{
+    width:90px;
+    height: 50px;
+}
+
+.tReply{
+    margin-top: -10%;
+}
+
+.tReply #reContent{
+    margin-top: 1%;
+    width: 720px;
+    border-bottom: 1px solid salmon;
+    font-size: 15px;
+}

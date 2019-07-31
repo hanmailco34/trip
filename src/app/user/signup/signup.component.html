@@ -1,91 +1,101 @@
-        <div id="subWrap">  
-    <form class="form-horizontal" action='' method="POST">
-        <fieldset>
-            <table>
-              <br>
-          <div id="legend">
-            <legend class=""><b>회원가입</b></legend>
-            <br><br><br>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+<div id="subWrap">  
+      <fieldset>
+          <table>
+            <br>
+        <div id="legend">
+          <legend class=""><b>회원가입</b></legend>
+          <br><br><br>
+        </div>
+        
+        <div class="control-group">
+          <!-- Username -->
+          <label class="control-label col-sm-11" style="text-align: left;" for="userId"><b>아이디</b></label>
+          <div class="controls">
+            <input type="text" id="userId" name="userId" placeholder="your name" class="input-xlarge" style="text-align: center;" [(ngModel)]="user.userId" maxlength="15" (change)="idchk()">
+            <div id="idchkres"></div>
           </div>
-          
-          <div class="control-group">
+        </div>
+        <br>
+        <div class="control-group">
             <!-- Username -->
-            <label class="control-label col-sm-11" style="text-align: left;" for="userId"><b>아이디</b></label>
+            <label class="control-label col-sm-11" style="text-align: left;" for="userNick"><b>닉네임</b></label>
             <div class="controls">
-              <input type="text" id="userId" name="userId" placeholder="your name" class="input-xlarge" style="text-align: center;" [(ngModel)]="user.userId">
+              <input type="text" id="userNick" name="userNick" placeholder="your Nickname" class="input-xlarge" style="text-align: center;" [(ngModel)]="user.userNick" maxlength="10" >
             </div>
           </div>
           <br>
-          <div class="control-group">
-              <!-- Username -->
-              <label class="control-label col-sm-11" style="text-align: left;" for="userNick"><b>닉네임</b></label>
-              <div class="controls">
-                <input type="text" id="userNick" name="userNick" placeholder="your Nickname" class="input-xlarge" style="text-align: center;" [(ngModel)]="user.userNick">
-                
-              </div>
-            </div>
-            <br>
-          <div class="control-group">
-              <!-- Password-->
-              <label class="control-label col-sm-11" style="text-align: left;" for="password"><b>비밀번호</b></label>
-              <div class="controls">
-                <input type="password" id="password" name="password" placeholder="Password should be at least 4 characters" class="input-xlarge" style="text-align: center;" [(ngModel)]="user.userPwd">
-              </div>
-            </div>
-          <br>
-          <div class="control-group">
-              <!-- Password -->
-              <label class="control-label col-sm-11" style="text-align: left;" for="password_confirm"><b>비밀번호 확인</b></label>
-              <div class="controls">
-                <input type="password" id="password_confirm" name="password_confirm" placeholder="Rewrite your Password" class="input-xlarge"  style="text-align: center;" [(ngModel)]="user.userPwdChk">
-              </div>
-            </div>
-            <br>
-          <div class="control-group">
-            <!-- E-mail -->
-            <label class="control-label col-sm-11" style="text-align: left;" for="email"><b>E-mail</b></label>
+        <div class="control-group">
+            <!-- Password-->
+            <label class="control-label col-sm-11" style="text-align: left;" for="password"><b>비밀번호</b></label>
             <div class="controls">
-              <input type="text" id="email" name="email" style="text-align: center;" placeholder="Please provide your E-mail" class="input-xlarge"  [(ngModel)]="user.userEmail">
+              <input type="password" id="password" name="password" placeholder="Password should be at least 4 characters" class="input-xlarge" style="text-align: center;" [(ngModel)]="user.userPwd" (change)="pwdchk()">
+              <div id="pwdchkres"></div>
             </div>
           </div>
-          <br>
-          <div class="control-group">
-              <!-- tel -->
-              <label class="control-label col-sm-11" style="text-align: left;" for="cellphone"><b>휴대전화</b></label>
-              <div class="controls">
-                <input type="tel" id="phone" name="phone" style="text-align: center;" placeholder="Phone number" class="input-xlarge" [(ngModel)]="user.userTel">
-              </div>
-          </div>
-          <br>
-          <div class="control-group">
-              <!-- birth -->
-              <label class="control-label col-sm-11" style="text-align: left;" for="email"><b>생년월일</b></label>
-              <div class="controls">
-                <input type="date" id="phone" name="phone" style="text-align: center;" placeholder="Phone number" class="input-xlarge" [(ngModel)]="user.userBirth">
-              </div>
-          </div>
-          <br>
-          <div class="control-group">
-              <!-- gender -->
-              <label class="control-label col-sm-11" style="text-align: left;" for="email" ><b>성별</b></label>
-              <div class="controls">
-                <select id='gender' [(ngModel)]="user.userGender">
-                  <option>선택</option>
-                  <option value="M">남자</option>
-                  <option value="F">여자</option>
-                </select>
-              </div>
-          </div>
-          <br>
-          
-          <div class="control-group">
-            <!-- Button -->
+        <br>
+        <div class="control-group">
+            <!-- Password -->
+            <label class="control-label col-sm-11" style="text-align: left;" for="password_confirm"><b>비밀번호 확인</b></label>
             <div class="controls">
-              <button class="btn btn-outline-success" type="button" (click)="join()">가입하기</button>
+              <input type="password" id="password_confirm" name="password_confirm" placeholder="Rewrite your Password" class="input-xlarge"  style="text-align: center;" [(ngModel)]="user.userPwdChk" (change)="pwdcorchk()">
+              <div id="pwdcorchkres"></div>
             </div>
-            <br>
           </div>
-        </table>
-        </fieldset>
-      </form>
-    </div> 
+          <br>
+        <div class="control-group">
+          <!-- E-mail -->
+          <label class="control-label col-sm-11" style="text-align: left;" for="email"><b>E-mail</b></label>
+          <div class="controls">
+            <input type="email" id="email" name="email" style="text-align: center;" placeholder="Please provide your E-mail" class="input-xlarge"  [(ngModel)]="user.userEmail" (change)="emailchk()">
+            <div id="emailchk"></div>
+          </div>
+        </div>
+        <br>
+        <div class="control-group">
+            <!-- tel -->
+            <label class="control-label col-sm-11" style="text-align: left;" for="email"><b>휴대전화</b></label>
+            <div class="controls">
+              <input type="tel" id="phone" name="phone" style="text-align: center;" placeholder="Phone number" class="input-xlarge" [(ngModel)]="user.userTel" (change)="telchk()">
+            </div>
+            <div id="telchk"></div>
+        </div>
+        <br>
+        <div class="control-group">
+            <!-- birth -->
+            <label class="control-label col-sm-11" style="text-align: left;" for="email"><b>생년월일</b></label>
+            <div class="controls">
+              <input type="date" id="phone" name="phone" style="text-align: center;" placeholder="Phone number" class="input-xlarge" [(ngModel)]="user.userBirth">
+            </div>
+        </div>
+        <br>
+        <div class="control-group">
+            <!-- gender -->
+            <label class="control-label col-sm-11" style="text-align: left;" for="email" ><b>성별</b></label>
+            <div class="controls">
+              <select id='gender' [(ngModel)]="user.userGender">
+                <option value="M">남자</option>
+                <option value="F">여자</option>
+              </select>
+              <div id="genderchk"></div>
+            </div>
+        </div>
+        <br>
+        
+        <div class="control-group">
+          <!-- Button -->
+          <div class="controls">
+            <button class="btn btn-outline-success" type="button" (click)="join()">가입하기</button>
+          </div>
+          <br>
+        </div>
+      </table>
+      </fieldset>
+  </div> 
+</body>
+</html>

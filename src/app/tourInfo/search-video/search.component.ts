@@ -10,6 +10,7 @@ import { ApiSearchService } from '../ApiSearchService';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  p: number = 1;
   scList:Search[] = [] ;  
   nsList:Nsearch[] = [];
   sc:Search = new Search();

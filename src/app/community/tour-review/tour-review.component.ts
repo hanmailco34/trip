@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { CommunityService } from '../community.service';
 
 @Component({
   selector: 'app-tour-review',
@@ -9,16 +8,24 @@ import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 })
 
 export class TourReviewComponent implements OnInit {
-  public Editor = ClassicEditor;
-
-    public onChange( { editor }: ChangeEvent ) {
-        const data = editor.getData();
-
-        console.log( data );
-    }
-  constructor() { }
+  @Input() rating: number;
+  @Input() itemId: number;
+  @Output() ratingClick: EventEmitter<any> = new EventEmitter<any>();
+  userNum:string;
+  reviews:[] = [];
+  
+  constructor(private _cs:CommunityService) {this.userNum = localStorage.getItem('userNum'); }
 
   ngOnInit() {
+    this._cs.getReviewList().subscribe(res=>{
+      for(var re in res){
+        this.reviews[re] = res[re];
+      
+      }
+      
+    })
+    
   }
+  
 
 }

@@ -17,26 +17,28 @@
       <div class="contents">
         <h2>Blog 검색</h2>
         <br>
-          검색어 : <input type="text" [(ngModel)]="searchWord" style="width:250px; height:30px ;"> &nbsp;
-          <button (click)="nsearch()" style="height:30px ;" class="btn btn-outline-secondary">검색</button>
+        <p style="font-size:15px;">Blog에서 여행에 대한 정보를 검색해보세요</p>
+        <br>
+          <input type="text" [(ngModel)]="searchWord" id="bSearch"> &nbsp;
+          <button (click)="nsearch()" style="height:35px; width: 50px;" class="btn btn-outline-success">검색</button>
           <br><br>
-        <table class="searchResult" style="width: 737px">
+          
+        <table class="searchResult" style="width: 737px" id="searchResult">
           <colgroup>
             <col style="width:25%">
             <col style="width:50%">
              <col style="width:25%">
           </colgroup>
           <tr>
-            <th scope="col">제목</th>
-            <th scope="col">내용</th>
-            <th scope="col">작성자</th>
-          </tr>
-          <tr *ngFor="let ns of nsList">
-          <td><a href="{{ns.link}}">{{ns.title}}</a></td>
-          <td>{{ns.description}}</td>
-          <td>{{ns.bloggername}}</td>
+            <th scope="col" style="text-align:center;">제목</th>
+            <th scope="col" style="text-align:center;">내용</th>
+            <th scope="col" style="text-align:center;">작성자</th>
           </tr>
         </table>
+        <div id="pagin" [innerHTML]="phtml">
+          
+        </div>
+      
     </div>
             </div>
 

@@ -1,22 +1,65 @@
 <div id="subWrap">
-  <div id="container">
-      <div class="lnb" >
-        <h1 class="bigTitle">
-          <a href="/noticeboard">공지사항</a>
-        </h1>
-        <ul>
-          <li  class="allNotice on"><a href="#">내 작성글 보기</a></li>
-          <li  class=""><a href="#">회원 정보 수정</a></li>
-
-        </ul>
-
+    <div id="container">
+        <div class="lnb" >
+          <h1 class="bigTitle">
+            <a href="/noticeboard">공지사항</a>
+          </h1>
+          <ul>
+            <li  class="allNotice on"><a href="#">내 작성글 보기</a></li>
+            <li  class=""><a href="#">회원 정보 수정</a></li>
   
-      </div>
-  </div>
-      <!-- //lnb -->
-      <div class="contents">
-        <h5>여행후기</h5>
-		        <table class="reviewTable">
+          </ul>
+  
+    
+        </div>
+    </div>
+        <!-- //lnb -->
+        <div class="contents">
+          <h5>여행후기</h5>
+              <table class="reviewTable">
+                <colgroup>
+                  <col style="width:10%">
+                  <col style="width:25%">
+                  <col style="width:10%">
+                  <col style="width:20%">
+                  <col style="width:7%">
+                </colgroup>
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">제목</th>
+                  <th scope="col">작성일</th>
+                  <th scope="col">평점</th>
+                  <th scope="col">조회수</th>
+                </tr>
+                <tr *ngFor="let rv of review">
+                  <td>{{rv.rvNum}}</td>
+                  <td><a href='/review/{{rv.rvNum}}'>{{rv.rvTitle}}</a></td>
+                  <td>{{rv.rvDate}}</td>
+                  <td>
+                      <fieldset class="rating">
+                        <input type="radio"  value="5" [checked]="rv.rvSp==5" readonly/>
+                        <label title="Rocks!">5 stars</label>
+                      
+                        <input type="radio" value="4"  [checked]="rv.rvSp==4" readonly/>
+                        <label title="Pretty good" >4 stars</label>
+                      
+                        <input type="radio" value="3"  [checked]="rv.rvSp==3" readonly/>
+                        <label title="Meh" >3 stars</label>
+                      
+                        <input type="radio"  value="2" [checked]="rv.rvSp==2" readonly/>
+                        <label title="Kinda bad">2 stars</label>
+                      
+                        <input type="radio" value="1" [checked]="rv.rvSp==1" readonly/>
+                        <label title="Sucks big time">1 star</label>
+                      </fieldset>
+                  </td>
+                  <td>{{rv.rvCnt}}</td>
+                </tr>
+                
+              </table>
+         
+            <h5>여행계획</h5>
+            <table class="planTable">
               <colgroup>
                 <col style="width:10%">
                 <col style="width:25%">
@@ -27,22 +70,22 @@
               <tr>
                 <th scope="col">번호</th>
                 <th scope="col">제목</th>
-                <th scope="col">작성자</th>
+                <th scope="col">여행도시</th>
                 <th scope="col">작성일</th>
                 <th scope="col">조회수</th>
               </tr>
-              <tr>
-                <td>테스트</td>
-                <td>테스트테스트테테테스트</td>
-                <td>테스트</td>
-                <td>테스트</td>
+              <tr *ngFor="let pl of plan">
+                <td>{{pl.planNum}}</td>
+                <td><a href='/tourPlan/{{pl.planNum}}'>{{pl.planTitle}}</a></td>
+                <td>{{pl.planPlace}}</td>
+                <td>{{pl.planDate}}</td>
                 <td>테스트</td>
               </tr>
               
             </table>
        
-          <h5>여행계획</h5>
-          <table class="planTable">
+          <h5>동행인 구하기</h5>
+          <table class="withTable">
             <colgroup>
               <col style="width:10%">
               <col style="width:25%">
@@ -53,22 +96,22 @@
             <tr>
               <th scope="col">번호</th>
               <th scope="col">제목</th>
-              <th scope="col">여행도시</th>
+              <th scope="col">내용</th>
               <th scope="col">작성일</th>
               <th scope="col">조회수</th>
             </tr>
-            <tr *ngFor="let pl of plan">
-              <td>{{pl.planNum}}</td>
-              <td>{{pl.planTitle}}</td>
-              <td>{{pl.planPlace}}</td>
-              <td>{{pl.planDate}}</td>
-              <td>테스트</td>
+            <tr *ngFor="let wi of with">
+              <td>{{wi.withNum}}</td>
+              <td><a href='/company/{{wi.withNum}}'>{{wi.withTitle}}</a></td>
+              <td>{{wi.withContent}}</td>
+              <td>{{wi.withDate}}</td>
+              <td>{{wi.withCnt}}</td>
             </tr>
             
           </table>
-     
-        <h5>동행인 구하기</h5>
-        <table class="withTable">
+      
+          <h5>여행 Tip</h5>
+        <table class="tipTable">
           <colgroup>
             <col style="width:10%">
             <col style="width:25%">
@@ -83,40 +126,14 @@
             <th scope="col">작성일</th>
             <th scope="col">조회수</th>
           </tr>
-          <tr *ngFor="let wi of with">
-            <td>{{wi.withNum}}</td>
-            <td>{{wi.withTitle}}</td>
-            <td>{{wi.withContent}}</td>
-            <td>{{wi.withDate}}</td>
-            <td>{{wi.withCnt}}</td>
+          <tr *ngFor="let ti of tip">
+            <td>{{ti.tipNum}}</td>
+            <td><a href='/tips/{{ti.tipNum}}'>{{ti.tipTitle}}</a></td>
+            <td>{{ti.tipContent}}</td>
+            <td>{{ti.tipDate}}</td>
+            <td>{{ti.tipNum}}</td>
           </tr>
           
         </table>
-    
-        <h5>여행 Tip</h5>
-      <table class="tipTable">
-        <colgroup>
-          <col style="width:10%">
-          <col style="width:25%">
-          <col style="width:20%">
-          <col style="width:10%">
-          <col style="width:7%">
-        </colgroup>
-        <tr>
-          <th scope="col">번호</th>
-          <th scope="col">제목</th>
-          <th scope="col">내용</th>
-          <th scope="col">작성일</th>
-          <th scope="col">조회수</th>
-        </tr>
-        <tr *ngFor="let ti of tip">
-          <td>{{ti.tipNum}}</td>
-          <td>{{ti.tipTitle}}</td>
-          <td>{{ti.tipContent}}</td>
-          <td>{{ti.tipDate}}</td>
-          <td>{{ti.tipNum}}</td>
-        </tr>
-        
-      </table>
+    </div>
   </div>
-</div>

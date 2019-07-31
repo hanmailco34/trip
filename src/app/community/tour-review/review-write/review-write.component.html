@@ -19,19 +19,26 @@
         <h2 class="titleSt02">여행 후기</h2>
         <div class="mb-3">
             <label for="title">제목</label>
-            <input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력해 주세요">
+            <input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력해 주세요" [(ngModel)]="review.rvTitle">
         </div>
         <div class="mb-3">
             <label for="reg_id">작성자</label>
-            <input type="text" class="form-control" name="reg_id" id="reg_id" placeholder="이름을 입력해 주세요">
+            <input type="text" class="form-control" name="reg_id" id="reg_id" placeholder="이름을 입력해 주세요" [(ngModel)]="userName" disabled>
         </div>
         <div class="mb-3"> 
             <label for="content">내용</label>
-        <ckeditor [editor]="Editor" (change)="onChange($event)"></ckeditor>
+            <ckeditor
+            [(data)]="editorValue"
+            [config]="ckEditorConfig"
+        ></ckeditor>
+        </div>
+        <div class="mb-3">
+            <label for="reg_id">여행경비</label>
+            <input type="text" class="form-control" placeholder="경비를 입력해 주세요" [(ngModel)]="review.rvCost">
         </div>
       
         <div class="col text-right">
-          <button type="button" class="btn btn-outline-danger" id="btnSave">저장</button>&nbsp;&nbsp;
+          <button type="button" class="btn btn-outline-danger" id="btnSave" (click)="saveTest()">저장</button>&nbsp;&nbsp;
           <button type="button" class="btn btn-outline-danger" id="btnList">목록</button>
       </div>
       </div>

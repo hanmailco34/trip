@@ -1,0 +1,70 @@
+<div id="subWrap">
+  <div class="lnb" >
+     <h1 class="bigTitle">
+       <a href="/search">여행정보</a>
+     </h1>
+     <ul>
+       <li><a href="/search">Youtube검색</a></li>
+       <li><a href="/bsearch">Blog검색</a></li>
+       <li class="allNotice on"><a href="/tsearch">Tema검색</a></li>
+       <li><a href="/checkList">Check List</a></li>
+     </ul>
+
+
+   </div>    
+   <!-- //lnb -->
+   <div class="contents">
+     <h2>Tema검색</h2>
+     <hr class="one">
+     <br>
+     <p style="font-size:15px;">테마로 여행계획을 검색해보세요!</p>
+     <div class="form-group">
+      <tr>  
+      <td><select class="form-control" style="width: 250px;" [(ngModel)]="temaNum"> &nbsp;
+           <optgroup label="Tema">
+            <option name="tema" value="1">남자혼자</option>
+            <option name="tema" value="2" >여자혼자</option>
+            <option name="tema" value="3" >남자끼리</option>
+            <option name="tema" value="4">여자끼리 </option>
+            <option name="tema" value="5" >커플 </option>
+            <option name="tema" value="6"  >남녀그룹</option>
+            <option name="tema" value="7"  >부모님과</option>
+          </optgroup>
+         </select></td>
+
+         <td>&nbsp;&nbsp;<button (click)="temaSearch()" style="height:35px; width: 50px;" class="btn btn-outline-secondary">검색</button>   </td>  
+        </tr>
+        </div>   
+                <table class="plansTable">
+                <colgroup>
+                  <col style="width:7%">
+                  <col style="width:25%">
+                  <col style="width:15%">
+                  <col style="width:10%">
+                  <col style="width:10%">
+                </colgroup>
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">제목</th>
+                  <th scope="col">여행도시</th>
+                  <th scope="col">여행일정</th>
+                  <th scope="col">이동수단</th>
+                </tr>
+                <tr *ngFor="let plan of plans  | paginate: { itemsPerPage: 10, currentPage: p }" >
+                  <td>{{plan.planNum}}</td>
+                  <td><a href="/tourPlan/{{plan.planNum}}">{{plan.planTitle}}</a></td>
+                  <td>{{plan.planPlace}}</td>
+                  <td>{{plan.planSch}}</td>
+                  <td>{{plan.planTrans}}</td>
+                </tr>
+                
+              </table>
+       <br><br><br><br><br>
+       <div style="text-align: center;">
+         <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>   
+   </div>
+   
+ </div>
+
+

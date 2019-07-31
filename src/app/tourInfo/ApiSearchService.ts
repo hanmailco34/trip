@@ -21,7 +21,7 @@ export class ApiSearchService {
       q:searchWord,
       part:"snippet",
       key:"AIzaSyAep9j5g0A_q0SDJItMu-Q93wbEyvO6vYc",
-      maxResults:5
+      maxResults:25
     };
     this.url = this.baseUrl;
     for(var option in optionParams){

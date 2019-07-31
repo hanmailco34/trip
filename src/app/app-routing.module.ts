@@ -15,22 +15,38 @@ import { TipsWriteComponent } from './community/tips/tips-write/tips-write.compo
 import { ReviewWriteComponent } from './community/tour-review/review-write/review-write.component';
 import { TourPlanComponent } from './community/tour-plan/tour-plan.component';
 import { PlanWriteComponent } from './community/tour-plan/plan-write/plan-write.component';
-import { TestComponent } from './test/test.component';
 import { CompanyComponent } from './community/company/company.component';
 import { FindCompanyComponent } from './community/company/find-company/find-company.component';
 import { MypageComponent } from './user/mypage/mypage.component';
 import { DetailCompanyComponent } from './community/company/detail-company/detail-company.component';
+import { LogoutComponent } from './user/logout/logout.component';
+import { DetailReviewComponent } from './community/tour-review/detail-review/detail-review.component';
+import { DetailTipsComponent } from './community/tips/detail-tips/detail-tips.component';
+import { EditReviewComponent } from './community/tour-review/edit-review/edit-review.component';
+import { EditTipsComponent } from './community/tips/edit-tips/edit-tips.component';
+import { DetailPlanComponent } from './community/tour-plan/detail-plan/detail-plan.component';
+import { EditCompanyComponent } from './community/company/edit-company/edit-company.component';
+import { UserdetailComponent } from './user/userdetail/userdetail.component';
+import { EditPlanComponent } from './community/tour-plan/edit-plan/edit-plan.component';
+import { ManageUserComponent } from './user/manage-user/manage-user.component';
+import { SearchTemaComponent } from './tourInfo/search-tema/search-tema.component';
 
 
 const routes: Routes = [
-  {path:'login',
+  {
+    path:'',
+    component:MainComponent
+  },
+  {
+    path:'login',
   component:LoginComponent
 },
-{path:'test',
-component:TestComponent
+{
+  path:'logout',
+  component:LogoutComponent
 },
 {
-  path:'signup',
+  path:'signup/:snsId',
   component:SignupComponent
 },
 {
@@ -42,12 +58,28 @@ component:TestComponent
   component:ReviewWriteComponent
 },
 {
+  path:'review/:rvNum',
+  component:DetailReviewComponent
+},
+{
+  path:'editReview/:reviewNum',
+  component:EditReviewComponent
+},
+{
   path:'tips',
   component:TipsComponent
 },
 {
   path:'tipsWrite',
   component:TipsWriteComponent
+},
+{
+  path:'tips/:tipNum',
+  component:DetailTipsComponent
+},
+{
+  path:'editTip/:tipNum',
+  component:EditTipsComponent
 },
 {
   path:'tourPlan',
@@ -58,6 +90,10 @@ component:TestComponent
   component:PlanWriteComponent
 },
 {
+  path:'tourPlan/:planNum',
+  component:DetailPlanComponent
+},
+{
   path:'company',
   component:CompanyComponent
 },
@@ -66,13 +102,18 @@ component:TestComponent
   component:FindCompanyComponent
 },
 {
+  path:'editCompany/:withNum',
+  component:EditCompanyComponent
+},
+{
+  path:'company/:withNum',
+  component:DetailCompanyComponent
+},
+{
   path:'mypage',
   component:MypageComponent
 },
-{
-  path:'company/detail',
-  component:DetailCompanyComponent
-},
+
 {
   path:'search',
   component:SearchComponent
@@ -80,10 +121,6 @@ component:TestComponent
 {
   path:'bsearch',
   component:SearchBlogComponent
-},
-{
-  path:'',
-  component:MainComponent
 },
 {
   path:'checkList',
@@ -96,6 +133,22 @@ component:TestComponent
 {
   path:'hotel',
   component:HotelComponent
+},
+{
+  path:'userdetail',
+  component:UserdetailComponent
+},
+{
+  path:'editPlan/:planNum',
+  component:EditPlanComponent
+},
+{
+  path:'manageUser',
+  component:ManageUserComponent
+},
+{
+  path:'tsearch',
+  component:SearchTemaComponent
 }
 ];
 

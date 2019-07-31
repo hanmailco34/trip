@@ -1,0 +1,95 @@
+<div id="subWrap">
+  <div class="lnb">
+    <h1 class="bigTitle">
+      <a href="/review">커뮤니티</a>
+    </h1>
+    <ul>
+      <li><a href="/review">여행 후기</a></li>
+      <li class="allNotice on"><a href="/tourPlan">여행 계획</a></li>
+      <li><a href="/company">동행인 구하기</a></li>
+      <li><a href="/tips">여행 Tip</a></li>
+    </ul>
+
+
+
+  </div>
+
+  <!-- //lnb -->
+  <div class="contents">
+    <h2>여행 계획</h2>
+<hr>
+    <table class="planTable">
+      <tr id="title">
+        <th>{{plans.planTitle}}
+          <div id="modify" *ngIf="userNum==true">
+              <a href="/editPlan/{{planNum}}">수정</a>&nbsp;
+              <a [routerLink]='' (click)="delPlan()">삭제</a>
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th id="writer">{{userName}}</th>
+      </tr>
+      <br>
+      <br>
+      <tr style="font-size:25px; color: deepskyblue">
+          <img src="../../../../assets/imgs/nara.jpg" width="200px"> 나라 - {{plans.planPlace}}
+      </tr>
+      <br>
+      <tr style="font-size:25px; color:firebrick">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="../../../../assets/imgs/city.png" width="90px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 도시 - {{plans.planCity}}
+      </tr>
+      <br> <br>
+      <tr style="font-size:25px; color:goldenrod">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="../../../../assets/imgs/sch.png" width="90px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 일정 - {{plans.planSch}}
+     
+      </tr>
+      <br>
+      <tr style="font-size:25px; color: mediumblue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="../../../../assets/imgs/trans.jpg" width="90px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이동수단 - {{plans.planTrans}}
+      </tr>
+      <br>
+      <tr style="font-size:25px;" *ngIf="plans.planTema==1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="../../../../assets/imgs/m1.png" width="90px" style="background-color: grey; border-radius: 7.5em">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 테마 - 남자혼자
+    
+      </tr>
+      <tr style="font-size:25px;" *ngIf="plans.planTema==2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="../../../../assets/imgs/w1.png" width="90px" style="background-color: grey; border-radius: 7.5em">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 테마 - 여자혼자
+    
+      </tr>
+      <tr style="font-size:25px;" *ngIf="plans.planTema==3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="../../../../assets/imgs/m2.png" width="90px" style="background-color: grey; border-radius: 7.5em">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 테마 - 남자끼리
+    
+      </tr>
+      <tr style="font-size:25px;" *ngIf="plans.planTema==4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="../../../../assets/imgs/w2.png" width="90px" style="background-color: grey; border-radius: 7.5em">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 테마 - 여자끼리
+    
+      </tr>
+      <tr style="font-size:25px;" *ngIf="plans.planTema==5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="../../../../assets/imgs/couple.png" width="90px" style="background-color: grey; border-radius: 7.5em">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 테마 - 커플
+    
+      </tr>
+      <tr style="font-size:25px;" *ngIf="plans.planTema==6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="../../../../assets/imgs/mw.png" width="90px" style="background-color: grey; border-radius: 7.5em">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 테마 - 남녀 그룹
+    
+      </tr>
+      <tr style="font-size:25px;" *ngIf="plans.planTema==1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="../../../../assets/imgs/wp.png" width="90px" style="background-color: grey; border-radius: 7.5em">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 테마 - 부모님과
+    
+      </tr>
+      <br><br><br><br><br>
+      <tr>
+          <td id="planContent"> <!--innerHTML로 넣음-->
+          </td>
+      </tr>
+            <!--<div id="like">
+              <a><img src="../../../../assets/imgs/like.png" width="50px"></a>좋아요:
+            </div>좋아요 기능 추가 할 거면 사용-->
+      <br><br><br>
+      
+    </table>
+    <br>
+
+  </div>
+</div>

@@ -16,9 +16,10 @@
         <h2>Youtube검색</h2>
         <hr class="one">
         <br>
-		        검색어 : <input type="text" [(ngModel)]="searchWord" style="width:250px; height:30px ;">&nbsp;
-            <button (click)="search()" style="height:30px ;" class="btn btn-outline-secondary">검색</button>
-							<table *ngFor="let sc of scList" class="videoTable"> 
+        <p style="font-size:15px;">Youtube에서 여행에 대한 정보를 검색해보세요</p>
+		        <input type="text" id="ySearch" [(ngModel)]="searchWord">&nbsp;
+            <button (click)="search()" style="height:35px; width: 50px;" class="btn btn-outline-danger">검색</button>        
+            <table *ngFor="let sc of scList | paginate: { itemsPerPage: 5, currentPage: p }" class="videoTable"> 
 								<tr>
 									<td>{{sc.snippet.title}}</td>
 								</tr>
@@ -29,8 +30,10 @@
 								[src]="url(sc.id.videoId)|safe" frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
 								</iframe>
 								</tr>
-						</table>
+            </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
+      
     </div>
 
 

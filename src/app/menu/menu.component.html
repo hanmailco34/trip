@@ -1,56 +1,61 @@
 
    <div id="header">
-      <!-- headTop -->
-      <div class="headTop">
-        <div class="logo"> <a href="/"> 
-          <img src="../assets/imgs/logo3.png" alt="여행감" width="300px">
-        </a>
-        </div>
-        <!-- loginArea : 로그인 전 -->
-        <div class="loginArea" style="width: 125px;">
-          <a href="/login">로그인</a> <span>|</span> <a href="/signup">회원가입</a>
-        </div>
-        <div id="search">
-          <form method="get"
-            action="#">
-            <fieldset>
-              <legend>검색</legend>
-              <span class="round"> <input type="text" name="cseq"
-                title="검색어 입력" tabindex="1" style="ime-mode: active;">
-                <button type="submit" name="search" id="search_btn" title="검색"
-                  tabindex="2">검색</button>
-              </span>
-            </fieldset>
-          </form>
-        </div>
-        <!-- //search -->
-  
+    <!-- headTop -->
+    <div class="headTop">
+      <div class="logo"> <a href="/"> 
+        <img src="../assets/imgs/logo3.png" alt="여행감" width="300px">
+      </a>
       </div>
-      <div class="menubar">
-          <ul>
-            <li><a>여행정보</a>
-              <ul>
-                <li><a href="/search">Youtube검색</a></li>
-                <li><a href="/bsearch">Blog검색</a></li>
-                <li><a href="/checkList">Check List</a></li>
-              </ul></li>
-            <li><a>커뮤니티</a>
-              <ul>
-                <li><a href="/review">여행 후기</a></li>
-                <li><a href="/tourPlan">여행 계획</a></li>
-                <li><a href="/company">동행인 구하기</a></li>
-                <li><a href="/tips">여행 Tip</a></li>
-              </ul></li>
-            <li><a>호텔</a>
-              <ul>
-                <li><a href="/hotel">추천 숙박</a></li>
-              </ul></li>
-              <li><a href="/noticeboard">공지사항</a></li>
-            <li><a>마이페이지</a>
+      <!-- loginArea : 로그인 전 -->
+      <div class="loginArea" style="width: 125px;">          
+        <div *ngIf="userNum as value ;else login"><a href="/logout">로그아웃</a></div>
+        <ng-template #login><a href="/login">로그인</a><span>|</span> <a href="/signup/notSnsId">회원가입</a></ng-template>
+      </div>
+      <div id="search">
+        <form method="get"
+          action="#">
+          <fieldset>
+            <legend>검색</legend>
+            <span class="round"> <input type="text" name="cseq" title="검색어 입력" tabindex="1">
+              <button type="submit" name="search" id="search_btn" title="검색" tabindex="2">검색</button>
+            </span>
+          </fieldset>
+        </form>
+      </div>
+      <!-- //search -->
+
+    </div>
+    <div class="menubar">
+        <ul>
+          <li><a>여행정보</a>
+            <ul>
+              <li><a href="/search">Youtube검색</a></li>
+              <li><a href="/bsearch">Blog검색</a></li>
+              <li><a href="/tsearch">Tema검색</a></li>
+              <li><a href="/checkList">Check List</a></li>
+            </ul></li>
+          <li><a>커뮤니티</a>
+            <ul>
+              <li><a href="/review">여행 후기</a></li>
+              <li><a href="/tourPlan">여행 계획</a></li>
+              <li><a href="/company">동행인 구하기</a></li>
+              <li><a href="/tips">여행 Tip</a></li>
+            </ul></li>
+          <li><a>호텔</a>
+            <ul>
+              <li><a href="/hotel">추천 숙박</a></li>
+            </ul></li>
+            <li><a href="/noticeboard">공지사항</a></li>
+            <li *ngIf="userLevel == 2"><a>관리자페이지</a>
+            <ul>
+              <li><a href="/manageUser">유저관리</a></li>
+              <li><a href="/userdetail">관리자 정보 수정</a></li>
+            </ul></li> 
+            <li *ngIf="userLevel == 1"><a>마이페이지</a>
               <ul>
                 <li><a href="/mypage">내 작성글 보기</a></li>
-                <li><a href="#">회원 정보 수정</a></li>
+                <li><a href="/userdetail">회원 정보 수정</a></li>
               </ul></li>
-          </ul>
-        </div>
-    </div>
+        </ul>
+      </div>
+  </div>

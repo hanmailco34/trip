@@ -1,0 +1,83 @@
+:host ::ng-deep .ck-editor__editable_inline {
+    min-height: 500px;
+}
+
+:host ::ng-deep .ck-editor__editable_inline {
+    min-height: 500px;
+}
+
+#tema{
+    word-spacing: 40px;
+}
+img{
+    background-color: black;
+}
+
+.tema
+{
+    font-family: Arial, Verdana;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tema li
+{
+    display: block;
+    position: relative;
+    float: left;
+}
+
+li ul
+{
+    display: none;
+}
+
+.tema li a 
+{
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    border-top: 1px solid #ffffff;
+    padding: 5px 15px 5px 15px;
+    background: #2C5463;
+    margin-left: 1px;
+    white-space: nowrap;
+}
+
+.tema li a:hover 
+{
+    background: #617F8A;
+}
+li:hover ul 
+{
+    display: block;
+    position: absolute;
+}
+
+li:hover li
+{
+    float: none;
+    font-size: 11px;
+}
+
+li:hover a 
+{
+    background: #617F8A;
+}
+
+li:hover li a:hover 
+{
+    background: #95A9B1;
+}
+p{
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    border-top: 1px solid #ffffff;
+    padding: 5px 15px 5px 15px;
+    background: #2C5463;
+    margin-left: 1px;
+    white-space: nowrap;
+}

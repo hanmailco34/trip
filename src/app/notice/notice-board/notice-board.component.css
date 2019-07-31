@@ -38,17 +38,18 @@ btn{
     margin-top: 10%;
    
 }
-.modal-dialog.modal-80size {
+.modal-dialog {
     width: 80%;
-    height: 80%;
-    margin: 0;
+    height: 70%;
+    margin: auto;
     padding: 0;
     z-index: -9999;
+    
   }
   
-  .modal-content.modal-80size {
+  .modal-content {
     height: auto;
-    min-height: 80%;
+    min-height: 70%;
     z-index: -9999;
   }
 

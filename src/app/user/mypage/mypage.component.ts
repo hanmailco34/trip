@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { User } from '../user';
 import { MypageService } from './mypage.service';
 
@@ -9,6 +9,9 @@ import { MypageService } from './mypage.service';
   styleUrls: ['./mypage.component.css']
 })
 export class MypageComponent implements OnInit {
+  @Input() rating: number;
+  @Input() itemId: number;
+  @Output() ratingClick: EventEmitter<any> = new EventEmitter<any>();
   user:User = new User();
   plan:[] = [];
   with:[] = [];
@@ -17,7 +20,7 @@ export class MypageComponent implements OnInit {
   constructor(private ms:MypageService) { }
   
   ngOnInit() {
-    this.user.userNum='15';
+    this.user.userNum=Number.parseInt(localStorage.getItem('userNum'));
     this.ms.getPlan(this.user.userNum).subscribe(res=>{
     for(var re in res){
      this.plan[re] = res[re];
